@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Printed Pickleball Paddle · Eli Castenson</title>
+  <meta name="description" content="Design process for a 3D printed pickleball paddle: TPU honeycomb core, PETG plates, keyed rim guard, and a heat-set insert handle.">
+  <meta property="og:image" content="images/paddle/hero.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">EC</span>Eli Castenson</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#projects">Projects</a>
+      <a href="paddle.html" aria-current="page">Paddle</a>
+      <a href="rc-car.html">RC Car</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HEADER ============ -->
+  <section class="project-hero">
+    <div class="wrap">
+      <a class="back" href="index.html#projects">← All projects</a>
+      <div class="ph-grid">
+        <div>
+          <span class="eyebrow">Project 01 · Product design</span>
+          <h1>3D Printed Pickleball Paddle</h1>
+          <p class="lede">
+            Real paddles are mostly plastic, so I wanted to know if I could print one that actually plays.
+            After a few months of iterating, I finished two.
+          </p>
+
+          <dl class="spec">
+            <div><dt>Status</dt><dd>2 finished paddles</dd></div>
+            <div><dt>Printer</dt><dd>Bambu Lab X1C</dd></div>
+            <div><dt>Materials</dt><dd>PETG · TPU · PETG-CF</dd></div>
+            <div><dt>Material cost</dt><dd>~$12 per paddle</dd></div>
+            <div><dt>Timeline</dt><dd>A few months</dd></div>
+            <div><dt>Skills</dt><dd>CAD · materials · failure analysis</dd></div>
+          </dl>
+
+          <ul class="toc">
+            <li><a href="#research">01 Research</a></li>
+            <li><a href="#design">02 Design</a></li>
+            <li><a href="#failures">03 What broke</a></li>
+            <li><a href="#results">04 Results</a></li>
+            <li><a href="#learned">05 What I learned</a></li>
+            <li><a href="#next">06 What's next</a></li>
+          </ul>
+        </div>
+        <figure class="ratio-4-5">
+          <img src="images/paddle/hero.jpg" alt="The two finished 3D printed paddles standing side by side">
+          <figcaption>The two finished paddles.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 RESEARCH ============ -->
+  <section id="research">
+    <div class="wrap grid-2" style="align-items:start">
+      <div class="prose">
+        <span class="step-num">01 / Research</span>
+        <h2>Starting from real paddles</h2>
+        <p>
+          Before modeling anything, I researched how commercial paddles are built, how they work, and how
+          they're manufactured. High-end paddles use a polypropylene honeycomb core to absorb impact,
+          with stiff face sheets on either side.
+        </p>
+        <p>
+          I also looked for anyone who had already 3D printed one. I found one project that documented
+          its process, and I borrowed a key idea from it: a flexible TPU middle sandwiched between two harder
+          plates. They used ABS for the plates; I used PETG because it's what I had.
+        </p>
+      </div>
+      <div style="display:grid; gap:16px">
+        <div class="callout">
+          <p><strong>Why TPU instead of polypropylene?</strong> Polypropylene honeycomb is what industry uses,
+          but it's hard to print well. TPU is flexible, prints reliably, and fills the same role: absorbing impact in the core.</p>
+        </div>
+        <figure class="ratio-4-5" style="max-width:380px">
+          <img src="images/paddle/sketches.jpg" alt="Pencil sketches of the paddle face, the TPU core and its perimeter groove, and the hex insert pocket">
+          <figcaption>Early sketches: the face shape, the TPU perimeter groove, and the insert pocket.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 DESIGN ============ -->
+  <section id="design">
+    <div class="wrap">
+      <span class="step-num">02 / Design</span>
+      <h2>How it goes together</h2>
+      <p class="muted" style="max-width:680px">
+        The paddle is a sandwich: a TPU honeycomb core with a PETG plate glued to each side. Three features
+        lock the layers together so they act like one part.
+      </p>
+
+      <div class="diagram" style="margin-top:24px">
+        <svg viewBox="0 0 640 230" role="img" aria-label="Cross-section of the paddle: PETG plate, TPU honeycomb core, PETG plate, with a rim guard whose circular key presses into a channel in the core">
+          <defs>
+            <pattern id="hex" width="24" height="14" patternUnits="userSpaceOnUse">
+              <path class="d-hex" d="M0,7 L6,0 H18 L24,7 L18,14 H6 Z"/>
+            </pattern>
+          </defs>
+          <!-- core -->
+          <rect class="d-core" x="60" y="72" width="360" height="60"/>
+          <rect x="60" y="72" width="360" height="60" fill="url(#hex)"/>
+          <!-- plates -->
+          <rect class="d-plate" x="60" y="60" width="360" height="12"/>
+          <rect class="d-plate" x="60" y="132" width="360" height="12"/>
+          <!-- cut edge -->
+          <path class="d-line" d="M420,54 l-5,10 l10,10 l-10,10 l10,10 l-10,10 l10,10 l-10,10 l10,10 l-10,10 l5,10" stroke-dasharray="3 3"/>
+          <!-- rim guard with circular key -->
+          <path class="d-rim" d="M70,54 H49 Q44,54 44,59 V145 Q44,150 49,150 H70 V144 H60 V60 H70 Z"/>
+          <circle class="d-rim" cx="65" cy="102" r="7"/>
+          <!-- leaders + labels -->
+          <polyline class="d-line" points="390,60 390,34 462,34"/>
+          <text class="d-label" x="468" y="32">PETG plate</text>
+          <text class="d-sub" x="468" y="47">glued to the core</text>
+
+          <polyline class="d-line" points="420,102 462,102"/>
+          <text class="d-label" x="468" y="100">TPU honeycomb core</text>
+          <text class="d-sub" x="468" y="115">flexes to absorb impact</text>
+
+          <polyline class="d-line" points="390,144 390,170 462,170"/>
+          <text class="d-label" x="468" y="168">PETG plate</text>
+          <text class="d-sub" x="468" y="183">glued to the core</text>
+
+          <polyline class="d-line" points="50,150 50,204 80,204"/>
+          <text class="d-label" x="86" y="202">Rim guard + circular key</text>
+          <text class="d-sub" x="86" y="217">key presses into a channel around the core</text>
+        </svg>
+        <figcaption style="margin-top:10px">Cross-section through the paddle face (not to scale).</figcaption>
+      </div>
+
+      <div class="feature-list">
+        <div class="feature">
+          <div class="icon">01</div>
+          <div>
+            <h3>TPU honeycomb core</h3>
+            <p>The flexible middle layer, modeled after the impact-absorbing cores in high-end paddles. PETG plates are glued to both faces.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">02</div>
+          <div>
+            <h3>Keyed rim guard</h3>
+            <p>A circular channel wraps around the edge of the TPU core. The rim guard has a matching circular key that presses into it and locks the plates and core together.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">03</div>
+          <div>
+            <h3>Dovetail handle</h3>
+            <p>At the handle, the two plates join with a dovetail joint so they can't slide apart.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">04</div>
+          <div>
+            <h3>Heat-set insert + screw</h3>
+            <p>Below the dovetail, a hexagonal pocket holds an M3 brass heat-set insert. Setting it fuses the plates together and gives a screw in the bottom of the handle something to thread into, which holds the whole assembly together.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery cols-4" style="margin-top:28px">
+        <figure class="ratio-4-5">
+          <img src="images/paddle/parts.jpg" alt="Every printed paddle part laid out before assembly: two plates, the TPU core, the rim guard, and the handle">
+          <figcaption>Every part, before assembly</figcaption>
+        </figure>
+        <figure class="ratio-4-5">
+          <img src="images/paddle/core.jpg" alt="The printed black TPU honeycomb core">
+          <figcaption>TPU honeycomb core</figcaption>
+        </figure>
+        <figure class="ratio-4-5">
+          <img src="images/paddle/rim.jpg" alt="The printed rim guard that keys into the core">
+          <figcaption>Rim guard</figcaption>
+        </figure>
+        <figure class="ratio-4-5">
+          <img src="images/paddle/handle.jpg" alt="A printed handle piece held in hand">
+          <figcaption>Handle</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 FAILURES ============ -->
+  <section id="failures">
+    <div class="wrap narrow">
+      <span class="step-num">03 / What broke</span>
+      <h2>Problems and fixes</h2>
+      <p class="muted">Both of these taught me more than the parts that worked on the first try.</p>
+
+      <div class="fail-log" style="margin-top:24px">
+        <article class="fail">
+          <h3>The paddle was too floppy to play with</h3>
+          <dl>
+            <dt class="p">Problem</dt><dd>The face flexed too easily and the paddle was hard to control.</dd>
+            <dt class="w">Why</dt><dd>Without adhesive, the plates and core slid against each other instead of acting as one stiff panel.</dd>
+            <dt class="f">Fix</dt><dd>Bonded the plates to the core. Once the layers couldn't slide, the paddle stiffened up.</dd>
+          </dl>
+        </article>
+
+        <article class="fail">
+          <h3>The PETG-CF paddle split apart mid-game</h3>
+          <dl>
+            <dt class="p">Problem</dt><dd>On a forehand, the top half of the PETG-CF paddle came off.</dd>
+            <dt class="w">Why</dt><dd>The brass insert hadn't seated properly. PETG-CF handles heat better than regular PETG, so the plastic around the insert never got hot enough to melt and bond.</dd>
+            <dt class="f">Fix</dt><dd>Packed small pieces of regular PETG into the hex pocket. They melt more easily and gave the insert something to grip. It has held up and played well since.</dd>
+          </dl>
+        </article>
+      </div>
+
+      <div class="gallery cols-2" style="margin-top:24px">
+        <figure class="ratio-4-5">
+          <img src="images/paddle/plate.jpg" alt="A printed PETG face plate held in hand">
+          <figcaption>A PETG face plate before bonding.</figcaption>
+        </figure>
+        <figure class="ratio-4-5">
+          <img src="images/paddle/glue.jpg" alt="Spraying adhesive onto the paddle plates on a cardboard sheet">
+          <figcaption>Fix #1: bonding the plates to the core.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 RESULTS ============ -->
+  <section id="results">
+    <div class="wrap">
+      <span class="step-num">04 / Results</span>
+      <h2>How it plays</h2>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>~$12 per paddle</h3>
+          <p class="muted" style="margin:0">Material cost at my final infill, a fraction of the price of a comparable retail paddle.</p>
+        </div>
+        <div class="panel">
+          <h3>Softer feel</h3>
+          <p class="muted" style="margin:0">It plays softer than a typical paddle, which gives more control and spin.</p>
+        </div>
+        <div class="panel">
+          <h3>Custom fit</h3>
+          <p class="muted" style="margin:0">I made the handle longer than standard because I prefer it, and kept the face slightly smaller so it fits on the build plate.</p>
+        </div>
+      </div>
+      <div class="gallery cols-2" style="margin-top:24px">
+        <figure class="ratio-4-5"><img src="images/paddle/finished.jpg" alt="Both finished paddles with grips, next to a pickleball"><figcaption>Both paddles, gripped and ready to play.</figcaption></figure>
+        <figure class="ratio-4-5"><img src="images/paddle/profile.jpg" alt="A finished paddle seen edge-on, showing its thickness"><figcaption>Edge-on: plates, core, and rim guard.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 LEARNED ============ -->
+  <section id="learned">
+    <div class="wrap narrow prose">
+      <span class="step-num">05 / What I learned</span>
+      <h2>Takeaways</h2>
+      <ul>
+        <li><strong>How materials bend.</strong> How swapping a material, or changing how well two parts are attached, changes the way the whole paddle flexes.</li>
+        <li><strong>Material behavior while printing and assembling.</strong> PETG-CF's heat resistance is usually a plus, but it's exactly what made the insert fail.</li>
+        <li><strong>Turning research into my own design.</strong> Taking how real paddles are built and adapting it to what a 3D printer can actually make.</li>
+        <li><strong>Diagnosing failures.</strong> Working backward from a part that didn't hold up to the actual cause.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 06 NEXT ============ -->
+  <section id="next">
+    <div class="wrap">
+      <span class="step-num">06 / What's next</span>
+      <h2>Open questions</h2>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Does TPU thickness control the feel?</h3>
+          <p class="muted" style="margin:0">Both paddles felt soft. I want to test how the thickness of the TPU core changes how soft or stiff the paddle feels on contact.</p>
+        </div>
+        <div class="panel">
+          <h3>An ABS version</h3>
+          <p class="muted" style="margin:0">ABS is stiffer than PETG. I only had PETG filaments on hand, so this is the next material to try.</p>
+        </div>
+        <div class="panel">
+          <h3>Bigger face, same printer</h3>
+          <p class="muted" style="margin:0">Changing the design so I can print a regulation-size face on the same build plate.</p>
+        </div>
+        <div class="panel">
+          <h3>Thinner but stiffer</h3>
+          <p class="muted" style="margin:0">Those two goals pull against each other. Figuring out the trade-off is the next design challenge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap next-nav">
+      <a class="btn" href="index.html#projects">← All projects</a>
+      <a class="btn primary" href="rc-car.html">Next: Custom RC Car →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Eli Castenson</span>
+    <span class="links"><a href="index.html">Home</a><a href="rc-car.html">RC Car</a></span>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

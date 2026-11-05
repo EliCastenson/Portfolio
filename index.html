@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eli Castenson · Engineering Portfolio</title>
+  <meta name="description" content="Design projects by Eli Castenson: a 3D printed pickleball paddle and a custom RC car, with the full design process behind each.">
+  <meta property="og:title" content="Eli Castenson · Engineering Portfolio">
+  <meta property="og:description" content="3D printing, CAD, and learning from what breaks.">
+  <meta property="og:image" content="images/paddle/card.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">EC</span>Eli Castenson</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#projects">Projects</a>
+      <a href="#process">Process</a>
+      <a href="#now">Now printing</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO: the printer ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow gcode">; printing portfolio.3mf <b>· layer 1 of ∞</b></span>
+        <h1 class="print-in"><span class="txt">Eli Castenson</span></h1>
+        <p class="lede">
+          I'm a <span class="todo">high school student</span> who likes figuring out how real products work,
+          then designing, 3D printing, and rebuilding my own versions until they hold up.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">See my projects →</a>
+          <a class="btn" href="#now">What I'm printing now</a>
+        </div>
+        <div class="display" aria-label="Quick stats">
+          <div><span>Projects</span><b>2</b></div>
+          <div class="hot"><span>Cost / paddle</span><b>~$12</b></div>
+          <div><span>Printer</span><b>Bambu X1C</b></div>
+          <div><span>Filaments</span><b>PETG · TPU · CF</b></div>
+        </div>
+      </div>
+
+      <!-- Animated printer: prints a paddle on loop -->
+      <div class="printer" aria-hidden="true">
+        <svg id="printer-svg" viewBox="0 0 400 420">
+          <defs>
+            <pattern id="layers" width="8" height="4" patternUnits="userSpaceOnUse">
+              <line class="pr-lines" x1="0" y1="3.5" x2="8" y2="3.5"/>
+            </pattern>
+            <clipPath id="build">
+              <rect x="60" y="300" width="280" height="0">
+                <animate attributeName="y" values="300;138;138;300" keyTimes="0;0.85;0.97;1" dur="10s" repeatCount="indefinite"/>
+                <animate attributeName="height" values="0;162;162;0" keyTimes="0;0.85;0.97;1" dur="10s" repeatCount="indefinite"/>
+              </rect>
+            </clipPath>
+          </defs>
+
+          <!-- AMS with four filament spools -->
+          <rect class="pr-ams" x="60" y="8" width="280" height="44" rx="9"/>
+          <circle cx="110" cy="30" r="14" fill="#5b7fae"/><circle class="pr-hub" cx="110" cy="30" r="5"/>
+          <circle cx="170" cy="30" r="14" fill="#2b2f33"/><circle class="pr-hub" cx="170" cy="30" r="5"/>
+          <circle cx="230" cy="30" r="14" fill="#4a5058"/><circle class="pr-hub" cx="230" cy="30" r="5"/>
+          <circle cx="290" cy="30" r="14" fill="#e2570f"/><circle class="pr-hub" cx="290" cy="30" r="5"/>
+
+          <!-- enclosure + window -->
+          <rect class="pr-body" x="20" y="60" width="360" height="350" rx="18"/>
+          <rect class="pr-glass" x="44" y="84" width="312" height="250" rx="8"/>
+
+          <!-- the part being printed: a paddle, handle first -->
+          <g clip-path="url(#build)">
+            <rect class="pr-obj" x="188" y="246" width="24" height="54" rx="3"/>
+            <rect class="pr-obj" x="140" y="140" width="120" height="114" rx="22"/>
+            <rect x="140" y="140" width="120" height="160" fill="url(#layers)"/>
+          </g>
+
+          <!-- bed -->
+          <rect class="pr-bed" x="80" y="300" width="240" height="9" rx="2"/>
+
+          <!-- gantry + toolhead, rising with each layer -->
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -162;0 -162;0 0" keyTimes="0;0.85;0.97;1" dur="10s" repeatCount="indefinite"/>
+            <rect class="pr-rail" x="44" y="268" width="312" height="6" rx="3"/>
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="-58 0;58 0;-58 0" dur="1.1s" repeatCount="indefinite"/>
+              <rect class="pr-head" x="180" y="258" width="40" height="32" rx="5"/>
+              <path class="pr-tip" d="M194,290 H206 L200,300 Z"/>
+              <circle class="pr-glow" cx="200" cy="300" r="5"/>
+            </g>
+          </g>
+
+          <!-- screen -->
+          <rect class="pr-screen" x="44" y="350" width="160" height="42" rx="7"/>
+          <text class="pr-txt" x="56" y="367">PRINTING</text>
+          <rect class="pr-track" x="56" y="376" width="136" height="5" rx="2.5"/>
+          <rect class="pr-fill" x="56" y="376" width="0" height="5" rx="2.5">
+            <animate attributeName="width" values="0;136;136;0" keyTimes="0;0.85;0.97;1" dur="10s" repeatCount="indefinite"/>
+          </rect>
+          <text class="pr-txt2" x="222" y="368">paddle.3mf</text>
+          <text class="pr-txt2" x="222" y="384">PETG · TPU</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects">
+    <div class="wrap">
+      <span class="eyebrow gcode">; LAYER 01 <b>· projects</b></span>
+      <h2>Finished prints &amp; build logs</h2>
+      <p class="muted" style="max-width:620px">
+        Each project page walks through the full process: the research, the design, what broke, and how I fixed it.
+      </p>
+
+      <div class="cards" style="margin-top:28px">
+        <a class="card" href="paddle.html">
+          <figure class="ratio-4-3">
+            <img src="images/paddle/card.jpg" alt="The two finished 3D printed pickleball paddles standing side by side">
+          </figure>
+          <div class="card-body">
+            <div class="meta-row">
+              <span class="status done">Complete · 2 paddles</span>
+              <span class="filaments" title="PETG, TPU, PETG-CF"><i style="background:#5b7fae"></i><i style="background:#2b2f33"></i><i style="background:#4a5058"></i></span>
+            </div>
+            <h3>3D Printed Pickleball Paddle</h3>
+            <p>A TPU honeycomb core sandwiched between PETG plates, locked together with a keyed rim guard, a dovetail handle, and a heat-set insert. About $12 in material.</p>
+            <ol class="mini-process" aria-label="Process">
+              <li>Research</li><li>CAD</li><li>Print</li><li>Broke</li><li>Fixed</li><li>Played</li>
+            </ol>
+            <span class="card-link">Read the build log →</span>
+          </div>
+        </a>
+
+        <a class="card" href="rc-car.html">
+          <figure class="ratio-4-3">
+            <img src="images/rc-car/card.jpg" alt="The custom RC car with 3D printed chassis, suspension, and electronics">
+          </figure>
+          <div class="card-body">
+            <div class="meta-row">
+              <span class="status wip">In progress · drivetrain</span>
+              <span class="filaments" title="PETG, PETG-CF"><i style="background:#9aa7b4"></i><i style="background:#4a5058"></i></span>
+            </div>
+            <h3>Custom RC Car</h3>
+            <p>A ground-up RC car for a "Formula RC" league idea in my engineering club. Steering and camber are dialed in; the drivetrain taught me the most.</p>
+            <ol class="mini-process" aria-label="Process">
+              <li>Research</li><li>CAD v1</li><li>Rebuild</li><li>Wheels</li><li class="now">Drivetrain</li><li class="todo">Drive</li>
+            </ol>
+            <span class="card-link">Read the build log →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section id="process">
+    <div class="wrap process-grid">
+      <div>
+        <span class="eyebrow gcode">; LAYER 02 <b>· process</b></span>
+        <h2>Every project builds up in layers</h2>
+        <p class="muted">
+          Both of my projects went through the same loop. The top layers are where I learned the most:
+          something breaks, I figure out exactly why, and the next version is better for it.
+        </p>
+      </div>
+      <div>
+        <ol class="stack" id="stack">
+          <li><span class="ln">L01</span><div><h3>Research the real thing</h3><p>How it works and how it's manufactured.</p><span class="ex">Commercial paddle cores · what's inside an RC car</span></div></li>
+          <li><span class="ln">L02</span><div><h3>Design in CAD</h3><p>Turn the research into parts my printer can make.</p><span class="ex">Dovetail handle · separate file for every car part</span></div></li>
+          <li><span class="ln">L03</span><div><h3>Print &amp; assemble</h3><p>Pick materials, print, and fasten it together.</p><span class="ex">PETG + TPU + PETG-CF · heat-set inserts &amp; screws</span></div></li>
+          <li><span class="ln">L04</span><div><h3>Test until it breaks</h3><p>Use it for real and see what fails.</p><span class="ex">Paddle split on a forehand · gear shredded on first drive</span></div></li>
+          <li><span class="ln">L05</span><div><h3>Diagnose why</h3><p>Work backward from the failure to the cause.</p><span class="ex">PETG-CF too heat-resistant for the insert · parts never chosen to fit</span></div></li>
+          <li><span class="ln">L06</span><div><h3>Fix &amp; iterate</h3><p>Change the design and print it again.</p><span class="ex">PETG packed into the insert pocket · camber tuned to slightly negative</span></div></li>
+        </ol>
+        <div class="plate" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NOW PRINTING ============ -->
+  <!--
+    To update progress: change each step's class to "done", "now", or leave it blank.
+    The progress bar, percentage, and layer count update themselves from those steps.
+  -->
+  <section id="now">
+    <div class="wrap">
+      <span class="eyebrow gcode">; LAYER 03 <b>· now printing</b></span>
+      <h2>What I'm working on now</h2>
+      <p class="muted" style="max-width:620px">Live from the print queue. These are still in progress.</p>
+
+      <div class="jobs">
+        <article class="job" style="--job:#5b7fae">
+          <div class="job-head"><span class="live">Printing</span><code>paddle_v2.3mf</code></div>
+          <div class="mini"><div class="bed"></div><div class="obj"></div><div class="nozzle"></div></div>
+          <h3>Paddle v2: tuning the feel</h3>
+          <p class="cursor">Testing how core thickness changes the feel</p>
+          <ol class="steps">
+            <li class="done">Two v1 paddles finished</li>
+            <li class="now">TPU core thickness test</li>
+            <li>ABS plates (stiffer)</li>
+            <li>Bigger face, same build plate</li>
+            <li>Thinner but stiffer</li>
+          </ol>
+          <div class="bar"><span></span></div>
+          <div class="job-meta"><span>Progress <b class="pct">0%</b></span><span>Layer <b class="layer">0</b>/<b class="total">0</b></span></div>
+        </article>
+
+        <article class="job" style="--job:#9aa7b4">
+          <div class="job-head"><span class="live">Printing</span><code>rc-car_drivetrain.3mf</code></div>
+          <div class="mini"><div class="bed"></div><div class="obj"></div><div class="nozzle"></div></div>
+          <h3>RC car: a drivetrain that fits</h3>
+          <p class="cursor">Matching the motor, gear, and differential</p>
+          <ol class="steps">
+            <li class="done">Steering linkage &amp; toe</li>
+            <li class="done">Camber on all four wheels</li>
+            <li class="now">Drivetrain parts that fit together</li>
+            <li>Realign the motor mount</li>
+            <li>First drive</li>
+            <li>Formula RC league</li>
+          </ol>
+          <div class="bar"><span></span></div>
+          <div class="job-meta"><span>Progress <b class="pct">0%</b></span><span>Layer <b class="layer">0</b>/<b class="total">0</b></span></div>
+        </article>
+
+        <article class="job queued">
+          <div class="job-head"><span class="live">Queued</span><code>next_project.3mf</code></div>
+          <div class="mini"><div class="bed"></div><div class="nozzle"></div></div>
+          <h3><span class="todo">Next project</span></h3>
+          <p class="cursor">Waiting for filament</p>
+          <ol class="steps">
+            <li><span class="todo">Describe your next idea, or delete this card</span></li>
+          </ol>
+          <div class="bar"><span></span></div>
+          <div class="job-meta"><span>Status <b>Queued</b></span><span>Layer <b>—</b></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills">
+    <div class="wrap">
+      <span class="eyebrow gcode">; LAYER 04 <b>· skills</b></span>
+      <h2>What I work with</h2>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>3D Printing</h3>
+          <ul>
+            <li>Bambu Lab X1C</li>
+            <li>PETG, PETG-CF, TPU</li>
+            <li>Multi-material assemblies</li>
+            <li>Heat-set inserts</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>CAD &amp; Design</h3>
+          <ul>
+            <li><span class="todo">CAD software you use</span></li>
+            <li>Multi-part assemblies</li>
+            <li>Joints: dovetails, keyed rims</li>
+            <li>Designing for print tolerance</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Mechanical</h3>
+          <ul>
+            <li>Suspension &amp; camber geometry</li>
+            <li>Steering linkages &amp; toe</li>
+            <li>Gears &amp; differentials</li>
+            <li>BLDC motor, ESC, servo, radio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="wrap grid-2" style="align-items:start">
+      <div>
+        <span class="eyebrow gcode">; LAYER 05 <b>· about</b></span>
+        <h2>How I approach a build</h2>
+        <p>
+          I start by researching how the real thing works and how it's made, then figure out what I can
+          realistically build with my own tools. Most of what I've learned has come from parts that didn't
+          hold up the first time and from working out why.
+        </p>
+        <p>
+          <span class="todo">Add a few sentences about yourself: interests outside engineering, what you want to study, what you're building next.</span>
+        </p>
+      </div>
+      <div class="panel">
+        <table class="facts">
+          <tr><th>School</th><td><span class="todo">Your school</span></td></tr>
+          <tr><th>Class of</th><td><span class="todo">Year</span></td></tr>
+          <tr><th>Interests</th><td>Mechanical engineering, product design, 3D printing</td></tr>
+          <tr><th>Clubs</th><td>Engineering club</td></tr>
+          <tr><th>Printer</th><td>Bambu Lab X1C</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="wrap narrow">
+      <span class="eyebrow gcode">; M84 <b>· print complete</b></span>
+      <h2>Say hi</h2>
+      <p>Questions about a project, or want the files? Reach out.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="mailto:you@example.com"><span class="todo">you@example.com</span></a>
+        <a class="btn" href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Eli Castenson</span>
+    <span class="links">
+      <a href="paddle.html">Paddle</a>
+      <a href="rc-car.html">RC Car</a>
+    </span>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
