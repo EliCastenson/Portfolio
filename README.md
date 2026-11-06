@@ -39,8 +39,7 @@ Anything highlighted with an **orange dashed box** on the page still needs your 
 In the HTML they're wrapped in `<span class="todo">…</span>`. Search for `todo`,
 replace the text, and delete the span tags around it.
 
-- Home: "high school student" wording, CAD software, about paragraph, school, class year, email, LinkedIn URL, the queued "next project" card
-- RC car: Next steps
+- Home: the Formula RC league step's plan in Now printing
 
 ## Update "Now printing"
 
@@ -53,7 +52,11 @@ Give each step `class="done"` (finished) or `class="now"` (what you're on), or n
 <li>ABS plates (stiffer)</li>
 ```
 
-The progress bar, percentage, and "Layer 2/5" counter update themselves. Add or remove `<li>` lines freely.
+The progress bar, percentage, and "Layer 2/5" counter update themselves.
+
+Each step is clickable. What appears in the detail panel lives in that step's `<template>`:
+photos and videos go in `<div class="insp-media">`, followed by paragraphs. `data-material`
+(PETG, TPU, ABS, PETG-CF) sets the temperatures shown in the print animation.
 To retire a job, delete its whole `<article class="job">…</article>` block.
 
 ## Photos
