@@ -23,7 +23,7 @@ var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 var printer = document.getElementById("printer-svg");
 if (printer && reduceMotion && printer.pauseAnimations) {
   printer.pauseAnimations();
-  printer.setCurrentTime(9);
+  printer.setCurrentTime(14);
 }
 
 // "Now printing" jobs: progress comes from the step list.
@@ -44,7 +44,7 @@ function startJob(job) {
   var t0 = null;
   function tick(t) {
     if (!t0) t0 = t;
-    var k = Math.min((t - t0) / 1600, 1);
+    var k = Math.min((t - t0) / 2800, 1);
     pctEl.textContent = Math.round(pct * (1 - Math.pow(1 - k, 3))) + "%";
     if (k < 1) requestAnimationFrame(tick);
   }
@@ -68,4 +68,32 @@ if ("IntersectionObserver" in window) {
 } else {
   jobs.forEach(startJob);
   if (stack) stack.classList.add("in");
+}
+
+// Build process tabs
+var tabs = document.querySelectorAll('.tab[role="tab"]');
+function selectTab(tab) {
+  tabs.forEach(function (t) {
+    var on = t === tab;
+    t.setAttribute("aria-selected", on);
+    t.tabIndex = on ? 0 : -1;
+    var panel = document.getElementById(t.getAttribute("aria-controls"));
+    if (panel) panel.hidden = !on;
+  });
+}
+tabs.forEach(function (t, i) {
+  t.addEventListener("click", function () { selectTab(t); });
+  t.addEventListener("keydown", function (e) {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    var next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+    selectTab(next); next.focus();
+  });
+});
+if (tabs.length) selectTab(tabs[0]);
+
+// Pause looping background videos for people who prefer reduced motion.
+if (reduceMotion) {
+  document.querySelectorAll("video[autoplay]").forEach(function (v) {
+    v.removeAttribute("autoplay"); v.pause(); v.setAttribute("controls", "");
+  });
 }

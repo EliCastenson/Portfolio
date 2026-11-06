@@ -61,12 +61,19 @@ To retire a job, delete its whole `<article class="job">…</article>` block.
 All photos are in `images/`, already cropped, compressed (under ~400 KB each), and stripped of
 location data from your phone.
 
-- `images/paddle/`: hero, card (home page), sketches, parts, core, rim, handle, plate, glue, finished, profile
-- `images/rc-car/`: hero, card (home page), electronics, notes-redesign, notes-hardware, sketch, rear, shock, shredded-gear, sleeve-calcs, grub-screw, motor
+- `images/paddle/`: hero, card (home page), sketches, parts, plate-flat, core, rim, handle, plate, glue, finished, profile
+- `images/rc-car/`: hero, card (home page), electronics, notes-redesign, notes-hardware, sketch, notes-math, notes-steering, notes-parts-1, notes-parts-2, notes-washer, rear, shock, shredded-gear, sleeve-calcs, grub-screw, motor
 
 To swap a photo, save the new one under the same filename. **Filenames are case-sensitive on GitHub Pages**
 (`Hero.JPG` ≠ `hero.jpg`). iPhone photos are .HEIC, which browsers can't show, so export them as JPG first.
 If a photo is missing, the page shows a dashed box with the filename it expects.
+
+## Videos
+
+The site's videos are in `videos/`, compressed for the web (about 12 MB total instead of 90 MB) with location
+data removed: `rc-first-drive`, `steering-demo`, `pickle-game`, `pickle-slowmo`, each with a `-poster.jpg` cover frame.
+
+**Don't upload your original phone videos.** GitHub's website won't accept files over 25 MB, and the site doesn't use them.
 
 ## Adding another project
 

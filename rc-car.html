@@ -37,14 +37,14 @@
           <h1>Custom RC Car</h1>
           <p class="lede">
             About a year ago I set out to build an RC car from scratch, with the idea of starting a
-            "Formula RC" league in my engineering club. It hasn't driven yet, but it's the project that taught me the most.
+            "Formula RC" league in my engineering club. After a lot of redesigns, it finally drove for the first time, and it's the project that taught me the most.
           </p>
 
           <dl class="spec">
-            <div><dt>Status</dt><dd>Drivetrain in progress</dd></div>
+            <div><dt>Status</dt><dd>Driving!</dd></div>
             <div><dt>Started</dt><dd>~1 year ago</dd></div>
             <div><dt>Goal</dt><dd>"Formula RC" club league</dd></div>
-            <div><dt>Done</dt><dd>Steering, suspension, camber</dd></div>
+            <div><dt>Done</dt><dd>Steering, suspension, first drive</dd></div>
             <div><dt>Fabrication</dt><dd>3D printing, drill press, tap</dd></div>
             <div><dt>Skills</dt><dd>CAD · geometry · machining</dd></div>
           </dl>
@@ -54,7 +54,8 @@
             <li><a href="#rethink">02 Rethinking the CAD</a></li>
             <li><a href="#chassis">03 Suspension &amp; steering</a></li>
             <li><a href="#drivetrain">04 The drivetrain</a></li>
-            <li><a href="#learned">05 Biggest lesson</a></li>
+            <li><a href="#first-drive">05 First drive</a></li>
+            <li><a href="#learned">06 Biggest lesson</a></li>
           </ul>
         </div>
         <figure class="ratio-4-5">
@@ -120,19 +121,39 @@
         </div>
       </div>
       <h3 style="margin-top:40px">From my notebook</h3>
-      <p class="muted" style="max-width:680px">Before rebuilding, I wrote down everything wrong with version 1, then planned the hardware so the new parts could be fastened instead of press-fit.</p>
-      <div class="gallery" style="margin-top:16px">
+      <p class="muted" style="max-width:680px">Before rebuilding, I wrote down everything wrong with version 1, worked out dimensions by hand, sketched individual parts, and planned the hardware so the new parts could be fastened instead of press-fit.</p>
+      <div class="gallery cols-4" style="margin-top:16px">
         <figure class="ratio-4-5">
-          <img src="images/rc-car/notes-redesign.jpg" alt="Handwritten redesign and reprint checklist for the RC car">
+          <img src="images/rc-car/notes-redesign.jpg" alt="Handwritten redesign and reprint checklist for the RC car" loading="lazy">
           <figcaption>The redesign-and-reprint list: center the motor shaft to the gear, fix suspension travel, stop the steering from jumping.</figcaption>
         </figure>
         <figure class="ratio-4-5">
-          <img src="images/rc-car/notes-hardware.jpg" alt="Handwritten list of heat-set inserts, screws, washers, and rods">
+          <img src="images/rc-car/notes-hardware.jpg" alt="Handwritten list of heat-set inserts, screws, washers, and rods" loading="lazy">
           <figcaption>The hardware list for version 2: heat-set inserts, M3–M5 screws, washers, and 8 mm rods.</figcaption>
         </figure>
         <figure class="ratio-4-5">
-          <img src="images/rc-car/sketch.jpg" alt="Hand-drawn pencil sketch of the RC car layout">
-          <figcaption>An early hand sketch of the car's layout.</figcaption>
+          <img src="images/rc-car/sketch.jpg" alt="Hand-drawn pencil sketch of the RC car layout" loading="lazy">
+          <figcaption>An early top-down sketch of the car's layout.</figcaption>
+        </figure>
+        <figure class="ratio-4-5">
+          <img src="images/rc-car/notes-math.jpg" alt="A page of handwritten dimension math with diagrams of the differential and suspension" loading="lazy">
+          <figcaption>Dimension math for the differential and suspension layout.</figcaption>
+        </figure>
+        <figure class="ratio-4-5">
+          <img src="images/rc-car/notes-steering.jpg" alt="A dimensioned part sketch with the note 'steering next!'" loading="lazy">
+          <figcaption>A dimensioned part sketch, with a reminder: steering next!</figcaption>
+        </figure>
+        <figure class="ratio-4-5">
+          <img src="images/rc-car/notes-parts-1.jpg" alt="Pencil sketches of small part cross-sections" loading="lazy">
+          <figcaption>Cross-section sketches of small parts and mounts.</figcaption>
+        </figure>
+        <figure class="ratio-4-5">
+          <img src="images/rc-car/notes-parts-2.jpg" alt="A page of small pencil sketches of car parts and mounts" loading="lazy">
+          <figcaption>More part and mount sketches.</figcaption>
+        </figure>
+        <figure class="ratio-4-5">
+          <img src="images/rc-car/notes-washer.jpg" alt="A part sketch showing where a washer goes, with 'Next: transmitter housing' highlighted" loading="lazy">
+          <figcaption>A washer detail, and the next item on the list: the transmitter housing.</figcaption>
         </figure>
       </div>
     </div>
@@ -164,6 +185,16 @@
               </dl>
             </article>
           </div>
+        <div class="gallery cols-2" style="margin-top:16px">
+            <figure class="ratio-4-5">
+              <img src="images/rc-car/rear.jpg" alt="Rear view of the car showing the suspension and coilover shocks">
+              <figcaption>Rear suspension and shocks.</figcaption>
+            </figure>
+            <figure class="ratio-4-5">
+              <img src="images/rc-car/shock.jpg" alt="A shock absorber being measured with digital calipers">
+              <figcaption>Measuring a shock with calipers.</figcaption>
+            </figure>
+          </div>
         </div>
 
         <div>
@@ -175,16 +206,10 @@
               precisely enough that the toe on both front wheels came out almost identical.
             </p>
           </div>
-          <div class="gallery cols-2" style="margin-top:16px">
-            <figure class="ratio-4-5">
-              <img src="images/rc-car/rear.jpg" alt="Rear view of the car showing the suspension and coilover shocks">
-              <figcaption>Rear suspension and shocks.</figcaption>
-            </figure>
-            <figure class="ratio-4-5">
-              <img src="images/rc-car/shock.jpg" alt="A shock absorber being measured with digital calipers">
-              <figcaption>Measuring a shock with calipers.</figcaption>
-            </figure>
-          </div>
+          <figure class="vid portrait" style="margin-top:16px">
+            <video src="videos/steering-demo.mp4" poster="videos/steering-demo-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video of the car's front wheels steering left and right"></video>
+            <figcaption>Steering demo: the bent-rod linkage turning both front wheels together.</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -236,10 +261,23 @@
     </div>
   </section>
 
-  <!-- ============ 05 LEARNED ============ -->
+  <!-- ============ 05 FIRST DRIVE ============ -->
+  <section id="first-drive">
+    <div class="wrap">
+      <span class="step-num">05 / First drive</span>
+      <h2>It drives</h2>
+      <p class="muted" style="max-width:680px">After all the redesigns, here's the car driving for the first time.</p>
+      <figure class="vid landscape" style="margin-top:20px">
+        <video src="videos/rc-first-drive.mp4" poster="videos/rc-first-drive-poster.jpg" controls playsinline preload="metadata" aria-label="Video of the RC car driving down a street for the first time"></video>
+        <figcaption>The first test drive.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 06 LEARNED ============ -->
   <section id="learned">
     <div class="wrap narrow">
-      <span class="step-num">05 / Biggest lesson</span>
+      <span class="step-num">06 / Biggest lesson</span>
       <p class="quote">What you order matters. Picking the right parts the first time saves countless hours of work later.</p>
       <div class="prose" style="margin-top:28px">
         <ul>
@@ -251,7 +289,7 @@
       </div>
       <div class="panel" style="margin-top:24px">
         <h3>Next steps</h3>
-        <p class="muted" style="margin:0"><span class="todo">Add your plan for finishing the drivetrain, and where the Formula RC league idea stands.</span></p>
+        <p class="muted" style="margin:0"><span class="todo">Add how you got the drivetrain working, and what's next for the Formula RC league.</span></p>
       </div>
     </div>
   </section>
