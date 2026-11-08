@@ -7,6 +7,7 @@ portfolio/
 ├── index.html      Home: intro, project cards, skills, about, contact
 ├── paddle.html     Pickleball paddle build log
 ├── rc-car.html     RC car build log
+├── projects.html   All projects on a timeline, oldest first
 ├── style.css       All styling (colors are at the top in :root)
 ├── script.js       Photo placeholders, Now printing panel, footer year
 ├── hero-printer.js The animated printer at the top of the home page
@@ -99,7 +100,7 @@ If you open the files straight from your computer, they still animate but the sl
 ## After editing style.css or a .js file
 
 Browsers keep old copies of these files. When you change one, bump the number after `?v=` in the
-`<link>` and `<script>` tags at the top and bottom of each page (e.g. `style.css?v=12` to `style.css?v=13`)
+`<link>` and `<script>` tags at the top and bottom of each page (e.g. `style.css?v=13` to `style.css?v=14`)
 so visitors get the new version.
 
 ## The printer at the top of the home page
@@ -107,3 +108,10 @@ so visitors get the new version.
 `hero-printer.js` prints five parts in a loop: the paddle face plate and TPU core, the RC car's bevel gear
 and pull arm, and the AP Research cycloidal disk. Each part's name, project, link, filament, nozzle
 temperature, and color are in the `PARTS` list near the top of the file.
+
+## The timeline page
+
+`projects.html` shows every project on a chart and then as a gallery, oldest first. In the chart, each
+bar's `--a` and `--b` are months counted from December 2025 (0) to the end of May 2027 (18), and the
+orange "Now" line is `--now` on `.tl-chart` (11.27 = early November 2026). Move `--now` forward as time
+passes, and add a new `.tl-row` and `.tl-item` for each new project.
