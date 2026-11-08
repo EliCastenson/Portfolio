@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eli Castenson · Engineering Portfolio</title>
-  <meta name="description" content="Design projects by Eli Castenson: a 3D printed pickleball paddle and a custom RC car, with the full design process behind each.">
-  <meta property="og:title" content="Eli Castenson · Engineering Portfolio">
-  <meta property="og:description" content="3D printing, CAD, and learning from what breaks.">
+  <title>Eli Castenson: engineering portfolio</title>
+  <meta name="description" content="Design projects by Eli Castenson: a 3D printed pickleball paddle, a custom RC car, and an AP Research study of printed gearboxes.">
+  <meta property="og:title" content="Eli Castenson: engineering portfolio">
+  <meta property="og:description" content="Design projects by Eli Castenson: a 3D printed pickleball paddle, a custom RC car, and an AP Research study of printed gearboxes.">
   <meta property="og:image" content="images/paddle/card.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <meta name="theme-color" content="#4fc4bd">
+  <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="home">
+<body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">EC</span>Eli Castenson</a>
+    <a class="brand" href="index.html"><img src="favicon.svg" alt="">Eli Castenson</a>
     <nav class="nav" aria-label="Main">
       <a href="#projects">Projects</a>
       <a href="#process">Process</a>
@@ -30,164 +30,108 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="hdr-contact">
+      <a href="https://www.linkedin.com/in/eli-castenson-846267266/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="2"/><path d="M5 7v4.5M5 4.6v.1M8 11.5V7m0 2c0-1.3.9-2 2-2s1.8.7 1.8 2v2.5"/></svg><span>LinkedIn</span></a>
+      <a href="mailto:eli.castenson@gmail.com"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1.5"/><path d="M2 4l6 5 6-5"/></svg><span>Email</span></a>
+      <a href="tel:+15132525312"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5.6 1.8 3.4 2.3c-.8.2-1.3 1-1.1 1.8 1.2 4.7 4.9 8.4 9.6 9.6.8.2 1.6-.3 1.8-1.1l.5-2.2-3-1.4-1.2 1.4c-1.8-.8-3.2-2.2-4-4l1.4-1.2z" stroke-linejoin="round"/></svg><span>Call</span></a>
+    </div>
   </div>
 </header>
 
 <main>
 
-  <!-- ============ HERO: the printer ============ -->
+  <!-- Hero: my paddle prints in, then its real dimensions draw -->
   <section class="hero">
     <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow gcode">; printing portfolio.3mf <b>· layer 1 of ∞</b></span>
-        <h1 class="print-in"><span class="txt">Eli Castenson</span></h1>
-        <p class="lede">
-          I'm an aspiring mechanical engineer at Indian Hill High School (Class of 2027). I like figuring out
-          how real products work, then designing, 3D printing, and rebuilding my own versions until they hold up.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#projects">See my projects →</a>
+      <div class="hero-text">
+        <h1>I design, 3D print, break, and rebuild things until they hold up.</h1>
+        <p class="lede">I'm Eli Castenson, an aspiring mechanical engineer at Indian Hill High School, class of 2027. Most of what I know came from parts that failed and working out why.</p>
+        <div class="actions">
+          <a class="btn solid" href="#projects">See the projects</a>
           <a class="btn" href="#now">What I'm printing now</a>
         </div>
-        <div class="display" aria-label="Quick stats">
-          <div><span>Projects</span><b>2</b></div>
-          <div class="hot"><span>Cost / paddle</span><b>~$12</b></div>
-          <div><span>Printer</span><b>Bambu X1C</b></div>
-          <div><span>Filaments</span><b>PETG · TPU · CF</b></div>
+        <div class="hero-status" aria-label="Printer status">
+          <span class="ok">Print complete</span>
+          <code>paddle_v1.3mf</code>
+          <span>PETG plates, TPU core</span>
+          <span>Bambu Lab X1C</span>
         </div>
       </div>
-
-      <!-- Animated printer: prints a paddle on loop -->
-      <div class="printer" aria-hidden="true">
-        <svg id="printer-svg" viewBox="0 0 400 420">
-          <defs>
-            <pattern id="layers" width="8" height="4" patternUnits="userSpaceOnUse">
-              <line class="pr-lines" x1="0" y1="3.5" x2="8" y2="3.5"/>
-            </pattern>
-            <clipPath id="build">
-              <rect x="60" y="300" width="280" height="0">
-                <animate attributeName="y" values="300;138;138;300" keyTimes="0;0.85;0.97;1" dur="16s" repeatCount="indefinite"/>
-                <animate attributeName="height" values="0;162;162;0" keyTimes="0;0.85;0.97;1" dur="16s" repeatCount="indefinite"/>
-              </rect>
-            </clipPath>
-          </defs>
-
-          <!-- AMS with four filament spools -->
-          <rect class="pr-ams" x="60" y="8" width="280" height="44" rx="9"/>
-          <circle cx="110" cy="30" r="14" fill="#5b7fae"/><circle class="pr-hub" cx="110" cy="30" r="5"/>
-          <circle cx="170" cy="30" r="14" fill="#2b2f33"/><circle class="pr-hub" cx="170" cy="30" r="5"/>
-          <circle cx="230" cy="30" r="14" fill="#4a5058"/><circle class="pr-hub" cx="230" cy="30" r="5"/>
-          <circle cx="290" cy="30" r="14" fill="#e2570f"/><circle class="pr-hub" cx="290" cy="30" r="5"/>
-
-          <!-- enclosure + window -->
-          <rect class="pr-body" x="20" y="60" width="360" height="350" rx="18"/>
-          <rect class="pr-glass" x="44" y="84" width="312" height="250" rx="8"/>
-
-          <!-- the part being printed: a paddle, handle first -->
-          <g clip-path="url(#build)">
-            <rect class="pr-obj" x="188" y="246" width="24" height="54" rx="3"/>
-            <rect class="pr-obj" x="140" y="140" width="120" height="114" rx="22"/>
-            <rect x="140" y="140" width="120" height="160" fill="url(#layers)"/>
-          </g>
-
-          <!-- bed -->
-          <rect class="pr-bed" x="80" y="300" width="240" height="9" rx="2"/>
-
-          <!-- gantry + toolhead, rising with each layer -->
-          <g>
-            <animateTransform attributeName="transform" type="translate" values="0 0;0 -162;0 -162;0 0" keyTimes="0;0.85;0.97;1" dur="16s" repeatCount="indefinite"/>
-            <rect class="pr-rail" x="44" y="268" width="312" height="6" rx="3"/>
-            <g>
-              <animateTransform attributeName="transform" type="translate" values="-58 0;58 0;-58 0" dur="1.8s" repeatCount="indefinite"/>
-              <rect class="pr-head" x="180" y="258" width="40" height="32" rx="5"/>
-              <path class="pr-tip" d="M194,290 H206 L200,300 Z"/>
-              <circle class="pr-glow" cx="200" cy="300" r="5"/>
-            </g>
-          </g>
-
-          <!-- screen -->
-          <rect class="pr-screen" x="44" y="350" width="160" height="42" rx="7"/>
-          <text class="pr-txt" x="56" y="367">PRINTING</text>
-          <rect class="pr-track" x="56" y="376" width="136" height="5" rx="2.5"/>
-          <rect class="pr-fill" x="56" y="376" width="0" height="5" rx="2.5">
-            <animate attributeName="width" values="0;136;136;0" keyTimes="0;0.85;0.97;1" dur="16s" repeatCount="indefinite"/>
-          </rect>
-          <text class="pr-txt2" x="222" y="368">paddle.3mf</text>
-          <text class="pr-txt2" x="222" y="384">PETG · TPU</text>
-        </svg>
-      </div>
+      <figure class="hero-shot dimfig">
+        <div class="layers"><img src="images/compare/mine-petg.webp" alt="My 3D printed PETG pickleball paddle, 14.2 inches long and 6.9 inches wide" width="493" height="856"></div>
+        <span class="dim dim-h" style="--a:0%;--b:100%;--at:-22px"><i></i><i></i><b></b><b></b><em>6.9 in</em></span>
+        <span class="dim dim-v" style="--a:0%;--b:100%;--at:calc(100% + 26px)"><i></i><i></i><b></b><b></b><em>14.2 in</em></span>
+        <div class="hero-plate" aria-hidden="true"></div>
+        <figcaption>My PETG paddle, printed on a Bambu Lab X1C.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- ============ PROJECTS ============ -->
+  <!-- Projects -->
   <section id="projects">
     <div class="wrap">
-      <span class="eyebrow gcode">; LAYER 01 <b>· projects</b></span>
-      <h2>Finished prints &amp; build logs</h2>
-      <p class="muted" style="max-width:620px">
-        Each project page walks through the full process: the research, the design, what broke, and how I fixed it.
-      </p>
+      <h2>Projects</h2>
 
-      <div class="cards" style="margin-top:28px">
-        <a class="card" href="paddle.html">
-          <figure class="ratio-4-3">
-            <img src="images/paddle/card.jpg" alt="The two finished 3D printed pickleball paddles standing side by side">
-          </figure>
-          <div class="card-body">
-            <div class="meta-row">
-              <span class="status done">Complete · 2 paddles</span>
-              <span class="filaments" title="PETG, TPU, PETG-CF"><i style="background:#5b7fae"></i><i style="background:#2b2f33"></i><i style="background:#4a5058"></i></span>
-            </div>
-            <h3>3D Printed Pickleball Paddle</h3>
-            <p>A TPU honeycomb core sandwiched between PETG plates, locked together with a keyed rim guard, a dovetail handle, and a heat-set insert. About $12 in material.</p>
-            <ol class="mini-process" aria-label="Process">
-              <li>Research</li><li>CAD</li><li>Print</li><li>Broke</li><li>Fixed</li><li>Played</li>
-            </ol>
-            <span class="card-link">Read the build log →</span>
-          </div>
-        </a>
+      <article class="proj">
+        <div class="proj-text">
+          <span class="state">Finished: two paddles</span>
+          <h2><a href="paddle.html">3D printed pickleball paddle</a></h2>
+          <p>A flexible TPU honeycomb core between two PETG plates, locked together by a keyed rim guard, a dovetail handle, and a heat-set insert.</p>
+          <dl class="spec-list">
+            <dt>Size</dt><dd>14.2 &times; 6.9 in, 0.64 in thick</dd>
+            <dt>Materials</dt><dd>PETG, TPU, PETG-CF</dd>
+            <dt>Material cost</dt><dd>About $12 each</dd>
+          </dl>
+          <ol class="mini-process" aria-label="Process">
+            <li>Research</li><li>CAD</li><li>Print</li><li>Broke</li><li>Fixed</li><li>Played</li>
+          </ol>
+          <a class="btn" href="paddle.html">Read the build log</a>
+        </div>
+        <figure class="proj-media dimfig">
+          <img class="mat" src="images/compare/mine-pair.webp" alt="My two finished 3D printed pickleball paddles, PETG on the left and PETG-CF on the right">
+          <span class="lead" style="--x:31%;--y:34%"><span>PETG</span></span>
+          <span class="lead l" style="--x:69%;--y:34%"><span>PETG-CF</span></span>
+        </figure>
+      </article>
 
-        <a class="card" href="rc-car.html">
-          <figure class="ratio-4-3">
-            <img src="images/rc-car/card.jpg" alt="The custom RC car with 3D printed chassis, suspension, and electronics">
-          </figure>
-          <div class="card-body">
-            <div class="meta-row">
-              <span class="status wip">Driving · upgrading drivetrain</span>
-              <span class="filaments" title="PETG, PETG-CF"><i style="background:#9aa7b4"></i><i style="background:#4a5058"></i></span>
-            </div>
-            <h3>Custom RC Car</h3>
-            <p>A ground-up RC car for a "Formula RC" league idea in my engineering club. Steering and camber are dialed in and it drives. Now I'm designing a stronger motor shaft adapter.</p>
-            <ol class="mini-process" aria-label="Process">
-              <li>Research</li><li>CAD v1</li><li>Rebuild</li><li>Wheels</li><li>Drove</li><li class="now">Adapter</li><li class="todo">League</li>
-            </ol>
-            <span class="card-link">Read the build log →</span>
-          </div>
-        </a>
-      </div>
+      <article class="proj flip">
+        <div class="proj-text">
+          <span class="state wip">Driving, upgrading the drivetrain</span>
+          <h2><a href="rc-car.html">Custom RC car</a></h2>
+          <p>A ground-up RC car for a Formula RC league idea in my engineering club. Steering and camber are dialed in and it drives. Now I'm designing a stronger motor shaft adapter.</p>
+          <dl class="spec-list">
+            <dt>Built from</dt><dd>3D printed PETG, heat-set inserts, M2 steel rod</dd>
+            <dt>Electronics</dt><dd>BLDC motor, ESC, servo, receiver, LiPo</dd>
+            <dt>Started</dt><dd>About a year ago</dd>
+          </dl>
+          <ol class="mini-process" aria-label="Process">
+            <li>Research</li><li>CAD v1</li><li>Rebuild</li><li>Wheels</li><li>Drove</li><li class="now">Adapter</li><li class="todo">League</li>
+          </ol>
+          <a class="btn" href="rc-car.html">Read the build log</a>
+        </div>
+        <figure class="proj-media dimfig">
+          <img src="images/rc-car/card.jpg" alt="The custom RC car with its 3D printed chassis, suspension, and electronics" width="1200" height="900">
+          <span class="lead" style="--x:26%;--y:30%"><span>ESC</span></span>
+          <span class="lead" style="--x:46%;--y:49%"><span>20 kg steering servo</span></span>
+          <span class="lead" style="--x:51%;--y:64%"><span>Hand-bent M2 steering rods</span></span>
+        </figure>
+      </article>
     </div>
   </section>
 
-  <!-- ============ PROCESS ============ -->
+  <!-- Process -->
   <section id="process">
     <div class="wrap">
       <div class="process-head">
-        <div>
-          <span class="eyebrow gcode">; LAYER 02 <b>· process</b></span>
-          <h2>Every project builds up in layers</h2>
-        </div>
-        <p class="muted">
-          Both of my projects went through the same loop. The top layers are where I learned the most:
-          something breaks, I figure out exactly why, and the next version is better for it.
-          <strong class="hint">Click any layer to see how it played out in each project.</strong>
-        </p>
+        <h2>Every project builds up in layers</h2>
+        <p>Both projects went through the same loop. The top layers are where I learned the most: something breaks, I find out exactly why, and the next version is better for it. <span class="hint">Open any layer to see how it played out in each project.</span></p>
       </div>
       <ol class="stack" id="stack">
           <li>
             <details class="layer">
               <summary>
                 <span class="ln">L01</span>
-                <span class="layer-head"><span class="lh-title">Research the real thing</span><span class="lh-desc">How it works and how it's manufactured.</span><span class="ex">Commercial paddle cores · what's inside an RC car</span></span>
+                <span class="layer-head"><span class="lh-title">Research the real thing</span><span class="lh-desc">How it works and how it's manufactured.</span><span class="ex">Commercial paddle cores, what's inside an RC car</span></span>
                 <span class="chev" aria-hidden="true"></span>
               </summary>
               <div class="layer-detail">
@@ -198,7 +142,7 @@
                 <div>
                   <h4>In the paddle</h4>
                   <p>I researched how commercial paddles work and how they're manufactured. High-end paddles use a polypropylene honeycomb core between stiff face sheets. I found one 3D printed paddle project and borrowed its approach: TPU sandwiched between harder plates. They used ABS; I used PETG.</p>
-                  <a class="more" href="paddle.html#research">See it in the build log →</a>
+                  <a class="more" href="paddle.html#research">See it in the build log</a>
                 </div>
               </div>
               <div class="layer-col">
@@ -206,7 +150,7 @@
                 <div>
                   <h4>In the RC car</h4>
                   <p>I researched what most RC cars have, and my dad showed me pictures of his from the 1980s. Every one has a radio receiver, a BLDC motor, an ESC to drive the motor's phases, a steering servo, and a battery. I ordered one of each, picking for value.</p>
-                  <a class="more" href="rc-car.html#research">See it in the build log →</a>
+                  <a class="more" href="rc-car.html#research">See it in the build log</a>
                 </div>
               </div>
                 </div>
@@ -217,7 +161,7 @@
             <details class="layer">
               <summary>
                 <span class="ln">L02</span>
-                <span class="layer-head"><span class="lh-title">Design in CAD</span><span class="lh-desc">Turn the research into parts my printer can make.</span><span class="ex">Dovetail handle · separate file for every car part</span></span>
+                <span class="layer-head"><span class="lh-title">Design in CAD</span><span class="lh-desc">Turn the research into parts my printer can make.</span><span class="ex">Dovetail handle, separate file for every car part</span></span>
                 <span class="chev" aria-hidden="true"></span>
               </summary>
               <div class="layer-detail">
@@ -228,7 +172,7 @@
                 <div>
                   <h4>In the paddle</h4>
                   <p>A TPU honeycomb core with a PETG plate on each side. A rim guard with a circular key presses into a channel around the core, and the plates join at the handle with a dovetail. I kept the face slightly small to fit my build plate and made the handle longer than standard.</p>
-                  <a class="more" href="paddle.html#design">See it in the build log →</a>
+                  <a class="more" href="paddle.html#design">See it in the build log</a>
                 </div>
               </div>
               <div class="layer-col">
@@ -236,7 +180,7 @@
                 <div>
                   <h4>In the RC car</h4>
                   <p>My first design put every part in one CAD file, so moving one thing meant moving everything. For version 2, I gave each part its own file and avoided joints that needed extreme accuracy from my printer.</p>
-                  <a class="more" href="rc-car.html#rethink">See it in the build log →</a>
+                  <a class="more" href="rc-car.html#rethink">See it in the build log</a>
                 </div>
               </div>
                 </div>
@@ -247,7 +191,7 @@
             <details class="layer">
               <summary>
                 <span class="ln">L03</span>
-                <span class="layer-head"><span class="lh-title">Print &amp; assemble</span><span class="lh-desc">Pick materials, print, and fasten it together.</span><span class="ex">PETG + TPU + PETG-CF · heat-set inserts &amp; screws</span></span>
+                <span class="layer-head"><span class="lh-title">Print &amp; assemble</span><span class="lh-desc">Pick materials, print, and fasten it together.</span><span class="ex">PETG + TPU + PETG-CF, heat-set inserts &amp; screws</span></span>
                 <span class="chev" aria-hidden="true"></span>
               </summary>
               <div class="layer-detail">
@@ -258,7 +202,7 @@
                 <div>
                   <h4>In the paddle</h4>
                   <p>Printed on my Bambu Lab X1C in PETG, TPU, and PETG-CF, then glued together. An M3 brass heat-set insert in a hex pocket fuses the plates, and a screw in the bottom of the handle holds the whole assembly together.</p>
-                  <a class="more" href="paddle.html#design">See it in the build log →</a>
+                  <a class="more" href="paddle.html#design">See it in the build log</a>
                 </div>
               </div>
               <div class="layer-col">
@@ -266,7 +210,7 @@
                 <div>
                   <h4>In the RC car</h4>
                   <p>Version 1 had no fasteners, so prints rarely fit. I ordered heat-set inserts and M3–M5 screws and fastened parts together instead of printing them in place. It worked much better.</p>
-                  <a class="more" href="rc-car.html#rethink">See it in the build log →</a>
+                  <a class="more" href="rc-car.html#rethink">See it in the build log</a>
                 </div>
               </div>
                 </div>
@@ -277,7 +221,7 @@
             <details class="layer">
               <summary>
                 <span class="ln">L04</span>
-                <span class="layer-head"><span class="lh-title">Test until it breaks</span><span class="lh-desc">Use it for real and see what fails.</span><span class="ex">Paddle split on a forehand · gear shredded on first drive</span></span>
+                <span class="layer-head"><span class="lh-title">Test until it breaks</span><span class="lh-desc">Use it for real and see what fails.</span><span class="ex">Paddle split on a forehand, gear shredded on first drive</span></span>
                 <span class="chev" aria-hidden="true"></span>
               </summary>
               <div class="layer-detail">
@@ -288,7 +232,7 @@
                 <div>
                   <h4>In the paddle</h4>
                   <p>Before I added glue, the layers slid against each other and the paddle flexed too much to play with. Later, the PETG-CF paddle split on a forehand when the top half came off.</p>
-                  <a class="more" href="paddle.html#failures">See it in the build log →</a>
+                  <a class="more" href="paddle.html#failures">See it in the build log</a>
                 </div>
               </div>
               <div class="layer-col">
@@ -296,7 +240,7 @@
                 <div>
                   <h4>In the RC car</h4>
                   <p>My printed differential gears weren't accurate enough to carry load. The PETG-CF bevel gear shredded the instant the motor drove it. And my first pull arms gave so much positive camber the car couldn't even move.</p>
-                  <a class="more" href="rc-car.html#drivetrain">See it in the build log →</a>
+                  <a class="more" href="rc-car.html#drivetrain">See it in the build log</a>
                 </div>
               </div>
                 </div>
@@ -307,7 +251,7 @@
             <details class="layer">
               <summary>
                 <span class="ln">L05</span>
-                <span class="layer-head"><span class="lh-title">Diagnose why</span><span class="lh-desc">Work backward from the failure to the cause.</span><span class="ex">PETG-CF too heat-resistant for the insert · parts never chosen to fit</span></span>
+                <span class="layer-head"><span class="lh-title">Diagnose why</span><span class="lh-desc">Work backward from the failure to the cause.</span><span class="ex">PETG-CF too heat-resistant for the insert, parts never chosen to fit</span></span>
                 <span class="chev" aria-hidden="true"></span>
               </summary>
               <div class="layer-detail">
@@ -318,7 +262,7 @@
                 <div>
                   <h4>In the paddle</h4>
                   <p>The floppy feel came from the layers slipping, not from soft material. The split traced back to the brass insert: PETG-CF handles heat better than PETG, so the plastic around it never got hot enough to bond.</p>
-                  <a class="more" href="paddle.html#failures">See it in the build log →</a>
+                  <a class="more" href="paddle.html#failures">See it in the build log</a>
                 </div>
               </div>
               <div class="layer-col">
@@ -326,7 +270,7 @@
                 <div>
                   <h4>In the RC car</h4>
                   <p>Most drivetrain problems came from parts I never checked against each other. The metal gear's bore was too big for the motor shaft, the sleeve we machined came out oversized, and its walls were too thin for a grub screw. The short suspension arms came from mixing up a radius and a diameter.</p>
-                  <a class="more" href="rc-car.html#drivetrain">See it in the build log →</a>
+                  <a class="more" href="rc-car.html#drivetrain">See it in the build log</a>
                 </div>
               </div>
                 </div>
@@ -337,7 +281,7 @@
             <details class="layer">
               <summary>
                 <span class="ln">L06</span>
-                <span class="layer-head"><span class="lh-title">Fix &amp; iterate</span><span class="lh-desc">Change the design and print it again.</span><span class="ex">PETG packed into the insert pocket · camber tuned to slightly negative</span></span>
+                <span class="layer-head"><span class="lh-title">Fix &amp; iterate</span><span class="lh-desc">Change the design and print it again.</span><span class="ex">PETG packed into the insert pocket, camber tuned to slightly negative</span></span>
                 <span class="chev" aria-hidden="true"></span>
               </summary>
               <div class="layer-detail">
@@ -348,7 +292,7 @@
                 <div>
                   <h4>In the paddle</h4>
                   <p>Gluing the plates to the core stiffened the paddle. Packing regular PETG into the hex pocket gave the insert something to melt into, and it's held up since. Next: an ABS version, testing TPU core thickness, and a bigger face on the same build plate.</p>
-                  <a class="more" href="paddle.html#results">See it in the build log →</a>
+                  <a class="more" href="paddle.html#results">See it in the build log</a>
                 </div>
               </div>
               <div class="layer-col">
@@ -356,7 +300,7 @@
                 <div>
                   <h4>In the RC car</h4>
                   <p>I designed a part to fix the short arms, adjusted pull arm length until all four wheels had slightly negative camber, and bent M2 stainless rods into a steering linkage with near-identical toe. After all of that, the car drove for the first time.</p>
-                  <a class="more" href="rc-car.html#chassis">See it in the build log →</a>
+                  <a class="more" href="rc-car.html#chassis">See it in the build log</a>
                 </div>
               </div>
                 </div>
@@ -364,7 +308,6 @@
             </details>
           </li>
       </ol>
-      <div class="plate" aria-hidden="true"></div>
     </div>
   </section>
 
@@ -377,9 +320,10 @@
   -->
   <section id="now">
     <div class="wrap">
-      <span class="eyebrow gcode">; LAYER 03 <b>· now printing</b></span>
-      <h2>What I'm working on now</h2>
-      <p class="muted" style="max-width:640px">Live from the print queue. <strong class="hint" style="display:inline">Click any step to look inside the print.</strong></p>
+      <div class="process-head">
+        <h2>What I'm working on now</h2>
+        <p>Live from my print queue. <span class="hint">Pick any step to see inside the print.</span></p>
+      </div>
 
       <div class="jobs">
         <article class="job" style="--job:#5b7fae" data-shape="paddle" data-color="#5b7fae">
@@ -576,68 +520,38 @@
     </div>
   </section>
 
-  <!-- ============ SKILLS ============ -->
+
+  <!-- Skills -->
   <section id="skills">
     <div class="wrap">
-      <span class="eyebrow gcode">; LAYER 04 <b>· skills</b></span>
-      <h2>What I work with</h2>
-      <div class="grid-3">
-        <div class="panel">
-          <h3>3D Printing</h3>
-          <ul>
-            <li>Bambu Lab X1C</li>
-            <li>PETG, PETG-CF, TPU</li>
-            <li>Multi-material assemblies</li>
-            <li>Heat-set inserts</li>
-          </ul>
+      <h2 style="margin-bottom:28px">What I work with</h2>
+      <div class="skills">
+        <div>
+          <h3>3D printing</h3>
+          <ul><li>Bambu Lab X1C</li><li>PETG, PETG-CF, TPU, PLA</li><li>Multi-material assemblies</li><li>Heat-set inserts</li><li>Tolerance tests and calibration</li></ul>
         </div>
-        <div class="panel">
-          <h3>CAD &amp; Design</h3>
-          <ul>
-            <li>Fusion 360</li>
-            <li>Multi-part assemblies</li>
-            <li>Joints: dovetails, keyed rims</li>
-            <li>Designing for print tolerance</li>
-          </ul>
+        <div>
+          <h3>CAD and design</h3>
+          <ul><li>Fusion 360</li><li>Multi-part assemblies</li><li>Dovetails and keyed joints</li><li>Designing for print tolerance</li><li>Gear trains: planetary and cycloidal</li></ul>
         </div>
-        <div class="panel">
+        <div>
           <h3>Mechanical</h3>
-          <ul>
-            <li>Suspension &amp; camber geometry</li>
-            <li>Steering linkages &amp; toe</li>
-            <li>Gears &amp; differentials</li>
-            <li>BLDC motor, ESC, servo, radio</li>
-          </ul>
+          <ul><li>Suspension and camber geometry</li><li>Steering linkages and toe</li><li>Gears and differentials</li><li>BLDC motor, ESC, servo, radio</li><li>Drill press and tapping</li></ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ ABOUT ============ -->
+  <!-- About + approach -->
   <section id="about">
-    <div class="wrap grid-2" style="align-items:start">
-      <div>
-        <span class="eyebrow gcode">; LAYER 05 <b>· about</b></span>
-        <h2>How I approach a build</h2>
-        <p>
-          I start by researching how the real thing works and how it's made, then figure out what I can
-          realistically build with my own tools. Most of what I've learned has come from parts that didn't
-          hold up the first time and from working out why.
-        </p>
-        <p>
-          I enjoy designing and building projects that solve real problems for people. Through club work and
-          personal builds, I like applying mechanical and systems thinking to create practical, durable solutions.
-        </p>
-        <p>
-          I'm excited to collaborate with teams, step into leadership when needed, and explore internships or
-          project opportunities where I can keep learning and contributing.
-        </p>
-        <p>
-          Outside of building, I play soccer and pickleball, and I'm part of Engineering Club, Spanish Club,
-          Machine Learning Club, and IH Experienceships.
-        </p>
-      </div>
-      <div class="panel">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <h2>About me</h2>
+          <p>I'm an aspiring mechanical engineer in high school who enjoys designing and building projects that solve real problems for people. Through club work and personal builds, I like applying mechanical and systems thinking to create practical, durable solutions.</p>
+          <p>I'm excited to collaborate with teams, step into leadership when needed, and explore internships or project opportunities where I can keep learning and contributing.</p>
+          <p>Outside of building, I play soccer and pickleball, and I'm part of Engineering Club, Spanish Club, Machine Learning Club, and IH Experienceships.</p>
+        </div>
         <table class="facts">
           <tr><th>School</th><td>Indian Hill High School</td></tr>
           <tr><th>Class of</th><td>2027</td></tr>
@@ -645,28 +559,45 @@
           <tr><th>Activities</th><td>Engineering Club, Spanish Club, Machine Learning Club, IH Experienceships</td></tr>
           <tr><th>Sports</th><td>Soccer, pickleball</td></tr>
           <tr><th>Tools</th><td>Fusion 360, Bambu Lab X1C</td></tr>
-          <tr><th>Open to</th><td>Internships &amp; project opportunities</td></tr>
+          <tr><th>Open to</th><td>Internships and project opportunities</td></tr>
         </table>
+      </div>
+
+      <div class="approach">
+        <h2>How I approach a build</h2>
+        <p>The same steps run through the paddle, the RC car, and my AP Research study.</p>
+        <ol>
+          <li><div><h3>Learn how the real thing works first</h3>
+            <p>Before modeling anything, I study how the commercial version works and how it's made, and look for anyone who has already built one.</p>
+            <p>Paddle: polypropylene honeycomb cores. RC car: the five parts every car needs. AP Research: published studies on printed gearboxes.</p></div></li>
+          <li><div><h3>Pin down one question</h3>
+            <p>I decide exactly what I'm trying to find out, so I know what success looks like.</p>
+            <p>No study compares cycloidal and planetary reducers at the same 7:1 ratio on one rig, so that became my research question.</p></div></li>
+          <li><div><h3>Design for my printer, not a perfect one</h3>
+            <p>One CAD file per part, joints that tolerate normal print accuracy, heat-set inserts and screws instead of press fits, and parts sized to my build plate.</p></div></li>
+          <li><div><h3>Calibrate before I trust a print</h3>
+            <p>Tolerance test pieces, one locked slicer profile, and calipers on every critical part. Any meshing part that's off by more than 0.1 mm gets reprinted.</p></div></li>
+          <li><div><h3>Test the same way every time</h3>
+            <p>Same setup, a pilot run first, and repeated trials. In my AP Research study, every test runs five times in a randomized order.</p></div></li>
+          <li><div><h3>When it breaks, find the real cause</h3>
+            <p>I work backward from the failure to what actually caused it, then change the design.</p>
+            <p>The PETG-CF insert that never bonded. Drivetrain parts that were never chosen to fit together.</p></div></li>
+          <li><div><h3>Write it all down</h3>
+            <p>Notebook sketches, hand calculations, hardware lists, and a limit on design iterations, so every step is documented.</p></div></li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <!-- ============ CONTACT ============ -->
+  <!-- Contact -->
   <section id="contact">
-    <div class="wrap narrow">
-      <span class="eyebrow gcode">; M84 <b>· print complete</b></span>
-      <h2>Say hi</h2>
-      <p>Questions about a project, or want the files? Reach out.</p>
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p class="muted" style="margin-top:12px">Questions about a project, or want the files? Reach out.</p>
       <div class="contact-list">
-        <a class="contact-item" href="mailto:eli.castenson@gmail.com">
-          <span class="ci-label">Email</span><b>eli.castenson@gmail.com</b>
-        </a>
-        <a class="contact-item" href="tel:+15132525312">
-          <span class="ci-label">Phone</span><b>(513) 252-5312</b>
-        </a>
-        <a class="contact-item" href="https://www.linkedin.com/in/eli-castenson-846267266/" target="_blank" rel="noopener">
-          <span class="ci-label">LinkedIn</span><b>Eli Castenson</b>
-        </a>
+        <a class="contact-item" href="mailto:eli.castenson@gmail.com"><span class="ci-label">Email</span><b>eli.castenson@gmail.com</b></a>
+        <a class="contact-item" href="tel:+15132525312"><span class="ci-label">Phone</span><b>(513) 252-5312</b></a>
+        <a class="contact-item" href="https://www.linkedin.com/in/eli-castenson-846267266/" target="_blank" rel="noopener"><span class="ci-label">LinkedIn</span><b>Eli Castenson</b></a>
       </div>
     </div>
   </section>
@@ -675,13 +606,13 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© <span id="year">2026</span> Eli Castenson</span>
+    <span>&copy; <span id="year">2026</span> Eli Castenson</span>
     <span class="links">
-      <a href="mailto:eli.castenson@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/eli-castenson-846267266/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="paddle.html">Paddle</a>
-      <a href="rc-car.html">RC Car</a>
+      <a href="mailto:eli.castenson@gmail.com">eli.castenson@gmail.com</a>
+      <a href="tel:+15132525312">(513) 252-5312</a>
     </span>
+
   </div>
 </footer>
 

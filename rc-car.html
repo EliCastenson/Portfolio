@@ -3,306 +3,275 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Custom RC Car · Eli Castenson</title>
-  <meta name="description" content="Design process for a custom 3D printed RC car: suspension, camber, steering linkage, and a drivetrain that taught hard lessons.">
+  <title>Custom RC car: Eli Castenson</title>
+  <meta name="description" content="Design process for a custom 3D printed RC car: suspension, camber, steering linkage, and a drivetrain that taught hard lessons, compared against a kit drift chassis.">
+  <meta property="og:title" content="Custom RC car: Eli Castenson">
+  <meta property="og:description" content="Design process for a custom 3D printed RC car: suspension, camber, steering linkage, and a drivetrain that taught hard lessons, compared against a kit drift chassis.">
   <meta property="og:image" content="images/rc-car/hero.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <meta name="theme-color" content="#4fc4bd">
+  <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">EC</span>Eli Castenson</a>
+    <a class="brand" href="index.html"><img src="favicon.svg" alt="">Eli Castenson</a>
     <nav class="nav" aria-label="Main">
       <a href="index.html#projects">Projects</a>
       <a href="paddle.html">Paddle</a>
-      <a href="rc-car.html" aria-current="page">RC Car</a>
+      <a href="rc-car.html" aria-current="page">RC car</a>
       <a href="index.html#contact">Contact</a>
     </nav>
+    <div class="hdr-contact">
+      <a href="https://www.linkedin.com/in/eli-castenson-846267266/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="2"/><path d="M5 7v4.5M5 4.6v.1M8 11.5V7m0 2c0-1.3.9-2 2-2s1.8.7 1.8 2v2.5"/></svg><span>LinkedIn</span></a>
+      <a href="mailto:eli.castenson@gmail.com"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1.5"/><path d="M2 4l6 5 6-5"/></svg><span>Email</span></a>
+      <a href="tel:+15132525312"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5.6 1.8 3.4 2.3c-.8.2-1.3 1-1.1 1.8 1.2 4.7 4.9 8.4 9.6 9.6.8.2 1.6-.3 1.8-1.1l.5-2.2-3-1.4-1.2 1.4c-1.8-.8-3.2-2.2-4-4l1.4-1.2z" stroke-linejoin="round"/></svg><span>Call</span></a>
+    </div>
   </div>
 </header>
 
 <main>
 
-  <!-- ============ HEADER ============ -->
-  <section class="project-hero">
+  <section class="p-hero">
     <div class="wrap">
-      <a class="back" href="index.html#projects">← All projects</a>
-      <div class="ph-grid">
-        <div>
-          <span class="eyebrow">Project 02 · Mechanical design</span>
-          <h1>Custom RC Car</h1>
-          <p class="lede">
-            About a year ago I set out to build an RC car from scratch, with the idea of starting a
-            "Formula RC" league in my engineering club. After a lot of redesigns, it finally drove for the first time, and it's the project that taught me the most.
-          </p>
-
-          <dl class="spec">
-            <div><dt>Status</dt><dd>Driving · upgrading drivetrain</dd></div>
-            <div><dt>Started</dt><dd>~1 year ago</dd></div>
-            <div><dt>Goal</dt><dd>"Formula RC" club league</dd></div>
-            <div><dt>Done</dt><dd>Steering, suspension, first drive</dd></div>
-            <div><dt>Fabrication</dt><dd>3D printing, drill press, tap</dd></div>
-            <div><dt>Skills</dt><dd>CAD · geometry · machining</dd></div>
-          </dl>
-
-          <ul class="toc">
-            <li><a href="#research">01 Research</a></li>
-            <li><a href="#rethink">02 Rethinking the CAD</a></li>
-            <li><a href="#chassis">03 Suspension &amp; steering</a></li>
-            <li><a href="#drivetrain">04 The drivetrain</a></li>
-            <li><a href="#first-drive">05 First drive</a></li>
-            <li><a href="#learned">06 Biggest lesson</a></li>
-          </ul>
+      <a class="back" href="index.html#projects">Back to all projects</a>
+      <div class="p-hero-grid">
+        <div class="p-hero-text">
+          <h1>Custom RC car</h1>
+          <p class="lede">About a year ago I set out to build an RC car from scratch, with the idea of starting a Formula RC league in my engineering club. After a lot of redesigns, it finally drove for the first time, and it's the project that taught me the most.</p>
+          <table class="kv">
+            <tr><th>Status</th><td>Driving, upgrading the drivetrain</td></tr>
+            <tr><th>Started</th><td>About a year ago</td></tr>
+            <tr><th>Goal</th><td>A Formula RC league in my engineering club</td></tr>
+            <tr><th>Done</th><td>Steering, suspension, first drive</td></tr>
+            <tr><th>Made with</th><td>3D printing, a drill press, and a tap</td></tr>
+          </table>
+          <ol class="toc">
+            <li><a href="#research"><span>1</span>Research</a></li>
+            <li><a href="#rethink"><span>2</span>Rethinking the CAD</a></li>
+            <li><a href="#chassis"><span>3</span>Suspension and steering</a></li>
+            <li><a href="#drivetrain"><span>4</span>The drivetrain</a></li>
+            <li><a href="#first-drive"><span>5</span>First drive</a></li>
+            <li><a href="#compare"><span>6</span>Against a real chassis</a></li>
+            <li><a href="#learned"><span>7</span>Biggest lesson</a></li>
+          </ol>
         </div>
-        <figure class="ratio-4-5">
-          <img src="images/rc-car/hero.jpg" alt="The current RC car build with 3D printed chassis, shocks, and electronics">
-          <figcaption>The current version of the car.</figcaption>
+        <figure class="p-hero-media dimfig wide43">
+          <img src="images/rc-car/card.jpg" alt="The current RC car build with 3D printed chassis, shocks, and electronics" width="1200" height="900">
+          <span class="lead l" style="--x:25%;--y:30%"><span>ESC</span></span>
+          <span class="lead" style="--x:42%;--y:33%"><span>LiPo battery</span></span>
+          <span class="lead" style="--x:45%;--y:48%"><span>20 kg servo</span></span>
+          <span class="lead" style="--x:50%;--y:64%"><span>Hand-bent M2 rods</span></span>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- ============ 01 RESEARCH ============ -->
   <section id="research">
-    <div class="wrap grid-2" style="align-items:center">
-      <div class="prose">
-        <span class="step-num">01 / Research</span>
+    <div class="wrap sec">
+      <div class="sec-side"><b>1</b>Research</div>
+      <div class="sec-main">
         <h2>What's inside an RC car</h2>
-        <p>
-          I started by researching what most RC cars have. My dad even showed me pictures of his own RC car from the 1980s.
-          Every one I looked at came down to the same core components:
-        </p>
-        <table class="facts">
-          <tr><th>Radio receiver</th><td>Picks up the signals from the handheld transmitter</td></tr>
-          <tr><th>BLDC motor</th><td>Drives the wheels</td></tr>
-          <tr><th>ESC</th><td>Sends power to each of the motor's phases</td></tr>
-          <tr><th>Steering servo</th><td>Turns the front wheels</td></tr>
-          <tr><th>Battery</th><td>Powers everything</td></tr>
-        </table>
-        <p style="margin-top:16px">I ordered one of each from Amazon, picking whatever looked like the best value. (More on that later.)</p>
+        <div class="split">
+          <div>
+            <p>I started by researching what most RC cars have. My dad even showed me pictures of his own RC car from the 1980s. Every one I looked at came down to the same core parts:</p>
+            <table class="kv">
+              <tr><th>Radio receiver</th><td>Picks up the signals from the handheld transmitter</td></tr>
+              <tr><th>BLDC motor</th><td>Drives the wheels</td></tr>
+              <tr><th>ESC</th><td>Sends power to each of the motor's phases</td></tr>
+              <tr><th>Steering servo</th><td>Turns the front wheels</td></tr>
+              <tr><th>Battery</th><td>Powers everything</td></tr>
+            </table>
+            <p style="margin-top:18px">I ordered one of each from Amazon, picking whatever looked like the best value. More on that later.</p>
+          </div>
+          <figure><img src="images/rc-car/electronics.jpg" alt="Top view of the car showing the electronics mounted on the chassis" style="width:100%;aspect-ratio:4/5;object-fit:cover"><figcaption>Top view with the electronics mounted.</figcaption></figure>
+        </div>
       </div>
-      <figure class="ratio-4-5">
-        <img src="images/rc-car/electronics.jpg" alt="Top view of the car showing the electronics mounted on the chassis">
-        <figcaption>Top view with the electronics mounted.</figcaption>
-      </figure>
     </div>
   </section>
 
-  <!-- ============ 02 RETHINK ============ -->
   <section id="rethink">
-    <div class="wrap">
-      <span class="step-num">02 / Rethinking the CAD</span>
-      <h2>Version 1 vs. version 2</h2>
-      <p class="muted" style="max-width:680px">
-        My first design was hard to change and hard to print. The second time, I changed how I designed, not just what I designed.
-      </p>
-      <div class="compare">
-        <div class="panel v1">
-          <h3>First attempt</h3>
-          <ul>
+    <div class="wrap sec">
+      <div class="sec-side"><b>2</b>Rethinking the CAD</div>
+      <div class="sec-main">
+        <h2>Version 1 against version 2</h2>
+        <p>My first design was hard to change and hard to print. The second time, I changed how I designed, not just what I designed.</p>
+        <div class="v-compare">
+          <div><h3>First attempt</h3><ul>
             <li>Every part modeled in one file, so moving one thing meant moving everything</li>
             <li>Joints that needed extreme accuracy from the printer</li>
             <li>No fasteners: everything printed to fit in place</li>
-            <li>Result: prints rarely worked</li>
-          </ul>
-        </div>
-        <div class="panel v2">
-          <h3>Current design</h3>
-          <ul>
+            <li>Result: prints rarely worked</li></ul></div>
+          <div class="after"><h3>Current design</h3><ul>
             <li>Each part in its own file</li>
             <li>Designs that tolerate normal print accuracy</li>
             <li>Heat-set inserts and screws to fasten parts together</li>
-            <li>Result: parts fit and can be swapped out</li>
-          </ul>
+            <li>Result: parts fit and can be swapped out</li></ul></div>
         </div>
-      </div>
-      <h3 style="margin-top:40px">From my notebook</h3>
-      <p class="muted" style="max-width:680px">Before rebuilding, I wrote down everything wrong with version 1, worked out dimensions by hand, sketched individual parts, and planned the hardware so the new parts could be fastened instead of press-fit.</p>
-      <div class="gallery cols-4" style="margin-top:16px">
-        <figure class="ratio-4-5">
-          <img src="images/rc-car/notes-redesign.jpg" alt="Handwritten redesign and reprint checklist for the RC car" loading="lazy">
-          <figcaption>The redesign-and-reprint list: center the motor shaft to the gear, fix suspension travel, stop the steering from jumping.</figcaption>
-        </figure>
-        <figure class="ratio-4-5">
-          <img src="images/rc-car/notes-hardware.jpg" alt="Handwritten list of heat-set inserts, screws, washers, and rods" loading="lazy">
-          <figcaption>The hardware list for version 2: heat-set inserts, M3–M5 screws, washers, and 8 mm rods.</figcaption>
-        </figure>
-        <figure class="ratio-4-5">
-          <img src="images/rc-car/sketch.jpg" alt="Hand-drawn pencil sketch of the RC car layout" loading="lazy">
-          <figcaption>An early top-down sketch of the car's layout.</figcaption>
-        </figure>
-        <figure class="ratio-4-5">
-          <img src="images/rc-car/notes-math.jpg" alt="A page of handwritten dimension math with diagrams of the differential and suspension" loading="lazy">
-          <figcaption>Dimension math for the differential and suspension layout.</figcaption>
-        </figure>
-        <figure class="ratio-4-5">
-          <img src="images/rc-car/notes-steering.jpg" alt="A dimensioned part sketch with the note 'steering next!'" loading="lazy">
-          <figcaption>A dimensioned part sketch, with a reminder: steering next!</figcaption>
-        </figure>
-        <figure class="ratio-4-5">
-          <img src="images/rc-car/notes-parts-1.jpg" alt="Pencil sketches of small part cross-sections" loading="lazy">
-          <figcaption>Cross-section sketches of small parts and mounts.</figcaption>
-        </figure>
-        <figure class="ratio-4-5">
-          <img src="images/rc-car/notes-parts-2.jpg" alt="A page of small pencil sketches of car parts and mounts" loading="lazy">
-          <figcaption>More part and mount sketches.</figcaption>
-        </figure>
-        <figure class="ratio-4-5">
-          <img src="images/rc-car/notes-washer.jpg" alt="A part sketch showing where a washer goes, with 'Next: transmitter housing' highlighted" loading="lazy">
-          <figcaption>A washer detail, and the next item on the list: the transmitter housing.</figcaption>
-        </figure>
+        <h3 style="margin-top:48px">From my notebook</h3>
+        <p class="muted" style="max-width:40em;margin-top:6px">Before rebuilding, I wrote down everything wrong with version 1, worked out dimensions by hand, sketched individual parts, and planned the hardware so the new parts could be fastened instead of press-fit.</p>
+        <div class="shots c4">
+          <figure class=pos-top><img src="images/rc-car/notes-redesign.jpg" alt="Handwritten redesign and reprint checklist for the RC car" loading="lazy"><figcaption>The redesign list: center the motor shaft to the gear, fix suspension travel, stop the steering from jumping.</figcaption></figure>
+          <figure class=pos-top><img src="images/rc-car/notes-hardware.jpg" alt="Handwritten list of heat-set inserts, screws, washers, and rods" loading="lazy"><figcaption>The version 2 hardware list: heat-set inserts, M3 to M5 screws, washers, and 8 mm rods.</figcaption></figure>
+          <figure><img src="images/rc-car/sketch.jpg" alt="Hand-drawn pencil sketch of the RC car layout" loading="lazy"><figcaption>An early top-down sketch of the layout.</figcaption></figure>
+          <figure class=pos-top><img src="images/rc-car/notes-math.jpg" alt="A page of handwritten dimension math with diagrams of the differential and suspension" loading="lazy"><figcaption>Dimension math for the differential and suspension.</figcaption></figure>
+          <figure class=pos-top><img src="images/rc-car/notes-steering.jpg" alt="A dimensioned part sketch with the note 'steering next!'" loading="lazy"><figcaption>A dimensioned part sketch, with a reminder: steering next.</figcaption></figure>
+          <figure class=pos-top><img src="images/rc-car/notes-parts-1.jpg" alt="Pencil sketches of small part cross-sections" loading="lazy"><figcaption>Cross-sections of small parts and mounts.</figcaption></figure>
+          <figure class=pos-top><img src="images/rc-car/notes-parts-2.jpg" alt="A page of small pencil sketches of car parts and mounts" loading="lazy"><figcaption>More part and mount sketches.</figcaption></figure>
+          <figure class=pos-top><img src="images/rc-car/notes-washer.jpg" alt="A part sketch showing where a washer goes, with 'Next: transmitter housing' highlighted" loading="lazy"><figcaption>A washer detail, and what's next: the transmitter housing.</figcaption></figure>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 03 CHASSIS ============ -->
   <section id="chassis">
-    <div class="wrap">
-      <span class="step-num">03 / Suspension &amp; steering</span>
-      <h2>Getting the wheels right</h2>
-
-      <div class="grid-2" style="margin-top:8px; align-items:start">
-        <div>
-          <div class="fail-log">
+    <div class="wrap sec">
+      <div class="sec-side"><b>3</b>Suspension and steering</div>
+      <div class="sec-main">
+        <h2>Getting the wheels right</h2>
+        <div class="split" style="margin-top:12px">
+          <div>
             <article class="fail">
-              <h3>Suspension arms came out too short</h3>
+              <h3>The suspension arms came out too short</h3>
               <dl>
-                <dt class="p">Problem</dt><dd>The suspension arms were way shorter than they needed to be.</dd>
-                <dt class="w">Why</dt><dd>I used a radius where I meant a diameter.</dd>
+                <dt>Problem</dt><dd>The suspension arms were way shorter than they needed to be.</dd>
+                <dt>Why</dt><dd>I used a radius where I meant a diameter.</dd>
                 <dt class="f">Fix</dt><dd>Designed a new part that fit the existing arms and fastened it on.</dd>
               </dl>
             </article>
             <article class="fail">
               <h3>So much positive camber the car couldn't move</h3>
               <dl>
-                <dt class="p">Problem</dt><dd>The wheels tilted out at the top so far that the car couldn't roll.</dd>
-                <dt class="w">Why</dt><dd>The pull arms that support the top of each wheel set the camber, and my first lengths were off.</dd>
+                <dt>Problem</dt><dd>The wheels tilted out at the top so far that the car couldn't roll.</dd>
+                <dt>Why</dt><dd>The pull arms that support the top of each wheel set the camber, and my first lengths were off.</dd>
                 <dt class="f">Fix</dt><dd>Kept redesigning and testing pull arm lengths until all four wheels sat at slightly negative camber.</dd>
               </dl>
             </article>
+            <div class="shots c2" style="margin-top:20px">
+              <figure><img src="images/rc-car/rear.jpg" alt="Rear view of the car showing the suspension and coilover shocks"><figcaption>Rear suspension and shocks.</figcaption></figure>
+              <figure><img src="images/rc-car/shock.jpg" alt="A shock absorber being measured with digital calipers"><figcaption>Measuring a shock with calipers.</figcaption></figure>
+            </div>
           </div>
-        <div class="gallery cols-2" style="margin-top:16px">
-            <figure class="ratio-4-5">
-              <img src="images/rc-car/rear.jpg" alt="Rear view of the car showing the suspension and coilover shocks">
-              <figcaption>Rear suspension and shocks.</figcaption>
+          <div>
+            <h3>What I'm proud of: the bent-rod steering linkage</h3>
+            <p style="margin-top:8px">I bent M2 stainless steel rods by hand to make the steering linkage. After some practice I could bend them precisely enough that the toe on both front wheels came out almost identical.</p>
+            <figure class="vid portrait" style="margin-top:16px">
+              <video src="videos/steering-demo.mp4" poster="videos/steering-demo-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video of the car's front wheels steering left and right"></video>
+              <figcaption>The bent-rod linkage turning both front wheels together.</figcaption>
             </figure>
-            <figure class="ratio-4-5">
-              <img src="images/rc-car/shock.jpg" alt="A shock absorber being measured with digital calipers">
-              <figcaption>Measuring a shock with calipers.</figcaption>
-            </figure>
           </div>
-        </div>
-
-        <div>
-          <div class="callout">
-            <span class="eyebrow" style="color:var(--good)">What I'm proud of</span>
-            <h3 style="font-size:20px">Bent-rod steering linkage</h3>
-            <p>
-              I bent M2 stainless steel rods by hand to make the steering linkage. After some practice I could bend them
-              precisely enough that the toe on both front wheels came out almost identical.
-            </p>
-          </div>
-          <figure class="vid portrait" style="margin-top:16px">
-            <video src="videos/steering-demo.mp4" poster="videos/steering-demo-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video of the car's front wheels steering left and right"></video>
-            <figcaption>Steering demo: the bent-rod linkage turning both front wheels together.</figcaption>
-          </figure>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 04 DRIVETRAIN ============ -->
   <section id="drivetrain">
-    <div class="wrap grid-2" style="align-items:start">
-      <div>
-        <span class="step-num">04 / The drivetrain</span>
+    <div class="wrap sec">
+      <div class="sec-side"><b>4</b>The drivetrain</div>
+      <div class="sec-main">
         <h2>One problem led to the next</h2>
-        <p class="muted">
-          The drivetrain is where most of my time went. Each fix exposed a new problem, mostly because the parts I'd
-          ordered were never chosen to work together.
-        </p>
-        <ol class="chain">
-          <li>
-            <h3>Printed my own differential</h3>
-            <p>I tried designing a 3D printed differential for the rear wheels, but I couldn't get the dimensional accuracy I needed on the small gears, and they wouldn't carry load. I switched to an off-the-shelf differential.</p>
-          </li>
-          <li>
-            <h3>PETG-CF bevel gear shredded instantly</h3>
-            <p>I designed a PETG-CF bevel gear to drive the differential. The motor I'd ordered was powerful enough that it shredded the gear the first time I tried to drive the car.</p>
-          </li>
-          <li>
-            <h3>The metal gear didn't fit the motor</h3>
-            <p>I ordered the matching metal bevel gear, but never checked it against my motor. The motor shaft was much smaller than the gear's bore.</p>
-          </li>
-          <li>
-            <h3>Machined an adapter sleeve</h3>
-            <p>My dad helped me machine the aluminum shaft that came with the differential into a sleeve to fit over the motor shaft. Our drill press isn't very precise, so the hole came out oversized and our heat-fit plan didn't work.</p>
-          </li>
-          <li>
-            <h3>The set screw stripped the sleeve</h3>
-            <p>We drilled and tapped the side of the sleeve for a grub screw instead. The aluminum walls were too thin to take real clamping force, and the threads stripped as soon as I tightened it.</p>
-          </li>
-          <li>
-            <h3>Motor alignment was off</h3>
-            <p>I'd positioned the motor for my smaller printed gears. With the larger metal gear, the motor no longer lined up with the differential.</p>
-          </li>
-        </ol>
-      </div>
-      <div class="sticky-col">
-        <figure class="ratio-4-5"><img src="images/rc-car/shredded-gear.jpg" alt="The printed PETG-CF bevel gear with its teeth shredded"><figcaption>Step 2: the PETG-CF bevel gear after one try.</figcaption></figure>
-        <figure class="ratio-4-5"><img src="images/rc-car/sleeve-calcs.jpg" alt="Hand calculations and sketches for the adapter sleeve, with a 0.124 inch bore for a 0.125 inch motor shaft"><figcaption>Step 4: planning the sleeve. A 0.124 in bore for the 0.125 in shaft, meant to be a tight heat fit.</figcaption></figure>
-        <figure class="ratio-4-5"><img src="images/rc-car/grub-screw.jpg" alt="Tightening a grub screw into the aluminum sleeve that holds the metal bevel gear on the motor shaft"><figcaption>Step 5: tightening the grub screw into the thin aluminum sleeve.</figcaption></figure>
-        <figure class="ratio-4-5"><img src="images/rc-car/motor.jpg" alt="The BLDC motor in its printed mount with the metal bevel gear on the shaft"><figcaption>Step 6: the motor mount with the metal bevel gear.</figcaption></figure>
+        <p>The drivetrain is where most of my time went. Each fix exposed a new problem, mostly because the parts I'd ordered were never chosen to work together.</p>
+        <div class="split">
+          <ol class="chain">
+            <li><div><h3>Printed my own differential</h3><p>I tried designing a 3D printed differential for the rear wheels, but I couldn't get the dimensional accuracy I needed on the small gears, and they wouldn't carry load. I switched to an off-the-shelf differential.</p></div></li>
+            <li><div><h3>The PETG-CF bevel gear shredded instantly</h3><p>I designed a PETG-CF bevel gear to drive the differential. The motor I'd ordered was powerful enough that it shredded the gear the first time I tried to drive the car.</p></div></li>
+            <li><div><h3>The metal gear didn't fit the motor</h3><p>I ordered the matching metal bevel gear, but never checked it against my motor. The motor shaft was much smaller than the gear's bore.</p></div></li>
+            <li><div><h3>Machined an adapter sleeve</h3><p>My dad helped me machine the aluminum shaft that came with the differential into a sleeve to fit over the motor shaft. Our drill press isn't very precise, so the hole came out oversized and our heat-fit plan didn't work.</p></div></li>
+            <li><div><h3>The set screw stripped the sleeve</h3><p>We drilled and tapped the side of the sleeve for a grub screw instead. The aluminum walls were too thin to take real clamping force, and the threads stripped as soon as I tightened it.</p></div></li>
+            <li><div><h3>The motor alignment was off</h3><p>I'd positioned the motor for my smaller printed gears. With the larger metal gear, the motor no longer lined up with the differential.</p></div></li>
+          </ol>
+          <div class="shots c2" style="margin-top:24px">
+            <figure><img src="images/rc-car/shredded-gear.jpg" alt="The printed PETG-CF bevel gear with its teeth shredded"><figcaption>Step 2: the PETG-CF bevel gear after one try.</figcaption></figure>
+            <figure class="pos-top"><img src="images/rc-car/sleeve-calcs.jpg" alt="Hand calculations for the adapter sleeve, with a 0.124 inch bore for a 0.125 inch motor shaft"><figcaption>Step 4: a 0.124 in bore for the 0.125 in shaft, meant to be a tight heat fit.</figcaption></figure>
+            <figure><img src="images/rc-car/grub-screw.jpg" alt="Tightening a grub screw into the aluminum sleeve on the motor shaft"><figcaption>Step 5: tightening the grub screw into the thin sleeve.</figcaption></figure>
+            <figure><img src="images/rc-car/motor.jpg" alt="The BLDC motor in its printed mount with the metal bevel gear on the shaft"><figcaption>Step 6: the motor mount with the metal bevel gear.</figcaption></figure>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 05 FIRST DRIVE ============ -->
   <section id="first-drive">
-    <div class="wrap">
-      <span class="step-num">05 / First drive</span>
-      <h2>It drives</h2>
-      <p class="muted" style="max-width:680px">After all the redesigns, here's the car driving for the first time.</p>
-      <figure class="vid landscape" style="margin-top:20px">
-        <video src="videos/rc-first-drive.mp4" poster="videos/rc-first-drive-poster.jpg" controls playsinline preload="metadata" aria-label="Video of the RC car driving down a street for the first time"></video>
-        <figcaption>The first test drive.</figcaption>
-      </figure>
+    <div class="wrap sec">
+      <div class="sec-side"><b>5</b>First drive</div>
+      <div class="sec-main">
+        <h2>It drives</h2>
+        <p>After all the redesigns, here's the car driving for the first time.</p>
+        <figure class="vid landscape" style="margin-top:24px"><video src="videos/rc-first-drive.mp4" poster="videos/rc-first-drive-poster.jpg" controls playsinline preload="metadata" aria-label="Video of the RC car driving down a street for the first time"></video><figcaption>The first test drive.</figcaption></figure>
+      </div>
     </div>
   </section>
 
-  <!-- ============ 06 LEARNED ============ -->
-  <section id="learned">
-    <div class="wrap narrow">
-      <span class="step-num">06 / Biggest lesson</span>
-      <p class="quote">What you order matters. Picking the right parts the first time saves countless hours of work later.</p>
-      <div class="prose" style="margin-top:28px">
-        <ul>
-          <li><strong>Choose parts as a system.</strong> The motor, gear, and differential each looked fine alone. The problems came from how they fit together.</li>
-          <li><strong>Design around what the printer can do.</strong> Tolerant joints and fasteners beat parts that need perfect accuracy.</li>
-          <li><strong>Keep CAD modular.</strong> Separate files made every later fix faster.</li>
-          <li><strong>Double-check dimensions.</strong> One radius-for-diameter mistake meant redesigning a part.</li>
-        </ul>
+  <section id="compare">
+    <div class="wrap sec">
+      <div class="sec-side"><b>6</b>Against a real chassis</div>
+      <div class="sec-main">
+        <h2>Mine next to a kit drift chassis</h2>
+        <p>Drag the real chassis over my car, then turn and resize it to line up the wheels. Pick a part to find it on both cars and see how mine differs.</p>
+        <div class="cmp rc" data-config='{"scale": "match", "rotate": 48, "sideScale": 0.6, "mine": {"fit": 0.66, "length": 0.529, "target": [0.495, 0.435]}, "ref": {"src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Chassis_RC_Drift_-_R%C3%A9partition_des_%C3%A9lements.jpg/1280px-Chassis_RC_Drift_-_R%C3%A9partition_des_%C3%A9lements.jpg", "cut": "light", "seed": [0.48, 0.6], "dropColors": ["#3c1fe0", "#2a3be6", "#5a2ee8", "#ff7b1a", "#ff9a3c", "#f06a10"], "box": [58, 190, 1178, 770], "length": 715, "anchor": [618, 480]}}' data-view="photo">
+          <div class="cmp-stage">
+            <img class="cmp-base" src="images/compare/mine-rc.webp" alt="My RC car">
+            <div class="mk-layer"><span class="mk" data-k="motor" style="left:34.1%;top:20.9%">1</span><span class="mk" data-k="esc" style="left:28.0%;top:36.2%">2</span><span class="mk" data-k="battery" style="left:46.8%;top:38.4%">3</span><span class="mk" data-k="servo" style="left:50.5%;top:53.0%">4</span><span class="mk" data-k="steering" style="left:56.1%;top:66.8%">5</span><span class="mk" data-k="shocks" style="left:71.8%;top:66.0%">6</span><span class="mk" data-k="tires" style="left:47.7%;top:85.4%">7</span><span class="mk" data-k="chassis" style="left:33.7%;top:51.4%">8</span></div>
+            <span class="cmp-label mine">Mine</span>
+            <div class="cmp-ov" tabindex="0" role="group" aria-label="Kit drift chassis overlay. Drag it, or use the arrow keys, to move it over my car.">
+              <canvas class="cmp-photo"></canvas><canvas class="cmp-outline"></canvas>
+              <span class="mk" data-k="motor" style="left:29.5%;top:60.4%">1</span><span class="mk" data-k="esc" style="left:41.3%;top:64.0%">2</span><span class="mk" data-k="battery" style="left:42.0%;top:45.0%">3</span><span class="mk" data-k="servo" style="left:52.0%;top:70.4%">4</span><span class="mk" data-k="steering" style="left:65.9%;top:59.9%">5</span><span class="mk" data-k="shocks" style="left:80.3%;top:65.7%">6</span><span class="mk" data-k="tires" style="left:76.8%;top:81.0%">7</span><span class="mk" data-k="chassis" style="left:28.0%;top:69.0%">8</span>
+              <span class="cmp-label" style="left:8%;top:18%">Kit chassis</span>
+            </div>
+            <div class="cmp-hint">Drag the kit chassis over my car</div>
+            <div class="cmp-loading">Loading the reference photo</div>
+          </div>
+          <div class="cmp-controls">
+            <div class="seg" role="group" aria-label="How to show the kit chassis">
+              <button type="button" data-mode="photo" aria-pressed="true">Photo</button>
+              <button type="button" data-mode="outline" aria-pressed="false">Outline</button>
+              <button type="button" data-mode="difference" aria-pressed="false">Difference</button>
+            </div>
+            <label class="range">See-through <input type="range" min="15" max="100" value="65" data-ctl="opacity"><output data-out="opacity">65%</output></label>
+            <label class="range">Size <input type="range" min="30" max="160" value="60" data-ctl="size"><output data-out="size">60%</output></label>
+            <label class="range">Turn <input type="range" min="-180" max="180" value="48" data-ctl="rotate"><output data-out="rotate">48°</output></label>
+            <button type="button" class="btn" data-act="lineup">Line up the wheels</button>
+            <button type="button" class="btn" data-act="flip">Flip</button>
+            <button type="button" class="btn" data-act="apart">Move it aside</button>
+          </div>
+          <div class="parts" role="group" aria-label="Find a part on both cars"><button type="button" data-part="motor" aria-pressed="false"><b>1</b>Motor<template><p>Both use a brushless (BLDC) motor near the rear axle. Mine drives a bevel gear into an off-the-shelf differential, which is where most of my drivetrain problems came from.</p></template></button><button type="button" data-part="esc" aria-pressed="false"><b>2</b>ESC<template><p>The ESC sends power to each of the motor's phases. Both sit right next to the motor to keep the high-current wires short.</p></template></button><button type="button" data-part="battery" aria-pressed="false"><b>3</b>Battery<template><p>Both carry the battery low and in the middle of the chassis. Mine sits in a printed tray.</p></template></button><button type="button" data-part="servo" aria-pressed="false"><b>4</b>Servo<template><p>The steering servo turns the front wheels. Mine is a 20 kg digital servo mounted on top of the printed chassis, ahead of the battery.</p></template></button><button type="button" data-part="steering" aria-pressed="false"><b>5</b>Steering<template><p>Kits usually use adjustable links with threaded ends. Mine uses M2 stainless steel rods I bent by hand, precise enough that both front wheels have almost identical toe.</p></template></button><button type="button" data-part="shocks" aria-pressed="false"><b>6</b>Shocks<template><p>Both use coilover shocks. Getting mine to work meant fixing suspension arms I'd made too short and tuning the pull arms until the camber was slightly negative.</p></template></button><button type="button" data-part="tires" aria-pressed="false"><b>7</b>Tires<template><p>The reference car is a drift chassis with hard plastic tires, made to slide. Mine has treaded tires for grip.</p></template></button><button type="button" data-part="chassis" aria-pressed="false"><b>8</b>Chassis<template><p>The reference chassis is built from flat carbon-fiber plates. Mine is 3D printed, with each part in its own CAD file and joined with heat-set inserts and screws, so I can reprint one part at a time.</p></template></button></div>
+          <div class="cmp-note"><p class="muted">Pick a part above to find it on both cars.</p></div>
+        </div>
+        <p class="cmp-credit">Reference photo: <a href="https://commons.wikimedia.org/wiki/File:Chassis_RC_Drift_-_R%C3%A9partition_des_%C3%A9lements.jpg" target="_blank" rel="noopener">Chassis RC Drift, répartition des éléments</a> by Espelir, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, with its background and French labels removed here. The two photos were taken from different angles, so lining them up is approximate.</p>
       </div>
-      <div class="panel" style="margin-top:24px">
-        <h3>Next steps</h3>
-        <p class="muted" style="margin:0">I'm designing an adapter that either sets onto or fits over the motor shaft, to replace the thin aluminum sleeve that stripped. I'm deciding between ordering it from a machining service like PCBWay or making it from the other end of the shaft I already ordered. After that: getting the Formula RC league going in my engineering club.</p>
+    </div>
+  </section>
+
+  <section id="learned">
+    <div class="wrap sec">
+      <div class="sec-side"><b>7</b>Biggest lesson</div>
+      <div class="sec-main">
+        <p class="quote">What you order matters. Picking the right parts the first time saves countless hours of work later.</p>
+        <div class="prose">
+          <ul>
+            <li><strong>Choose parts as a system.</strong> The motor, gear, and differential each looked fine alone. The problems came from how they fit together.</li>
+            <li><strong>Design around what the printer can do.</strong> Tolerant joints and fasteners beat parts that need perfect accuracy.</li>
+            <li><strong>Keep CAD modular.</strong> Separate files made every later fix faster.</li>
+            <li><strong>Double-check dimensions.</strong> One radius-for-diameter mistake meant redesigning a part.</li>
+          </ul>
+        </div>
+        <h3 style="margin-top:36px">Next steps</h3>
+        <p style="margin-top:8px;max-width:40em">I'm designing an adapter that either sets onto or fits over the motor shaft, to replace the thin aluminum sleeve that stripped. I'm deciding between ordering it from a machining service like PCBWay or making it from the other end of the shaft I already ordered. After that: getting the Formula RC league going in my engineering club.</p>
       </div>
     </div>
   </section>
 
   <section>
     <div class="wrap next-nav">
-      <a class="btn" href="paddle.html">← Pickleball Paddle</a>
-      <a class="btn primary" href="index.html#projects">All projects →</a>
+      <a href="paddle.html"><small>Previous project</small>Pickleball paddle</a>
+      <a href="index.html#projects" style="text-align:right"><small>Back to</small>All projects</a>
     </div>
   </section>
 
@@ -310,11 +279,17 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© <span id="year">2026</span> Eli Castenson</span>
-    <span class="links"><a href="https://www.linkedin.com/in/eli-castenson-846267266/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:eli.castenson@gmail.com">Email</a><a href="index.html">Home</a><a href="paddle.html">Paddle</a></span>
+    <span>&copy; <span id="year">2026</span> Eli Castenson</span>
+    <span class="links">
+      <a href="https://www.linkedin.com/in/eli-castenson-846267266/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:eli.castenson@gmail.com">eli.castenson@gmail.com</a>
+      <a href="tel:+15132525312">(513) 252-5312</a>
+    </span>
+
   </div>
 </footer>
 
 <script src="script.js" defer></script>
+<script src="compare.js" defer></script>
 </body>
 </html>

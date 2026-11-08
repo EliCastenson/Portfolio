@@ -385,6 +385,42 @@ if (reduceMotion) {
     requestAnimationFrame(loop);
   }
 
+  // Gear diagrams: swap the <img> for the inline SVG so a slider can turn the input by hand.
+  // (Needs the site to be served over http(s); opened as a local file it keeps the plain animation.)
+  function enhanceDiagram(fig) {
+    var img = fig.querySelector("img");
+    if (!img || !window.fetch) return;
+    var src = img.getAttribute("src");
+    var cyc = /cycloidal/.test(src), period = cyc ? 2.6 : 3;   // seconds per input turn, matches the SVG
+    fetch(src).then(function (r) { return r.ok ? r.text() : Promise.reject(); }).then(function (txt) {
+      if (!fig.isConnected) return;
+      var holder = document.createElement("div"); holder.innerHTML = txt;
+      var svg = holder.querySelector("svg"); if (!svg) return;
+      svg.setAttribute("role", "img"); svg.setAttribute("aria-label", img.getAttribute("alt") || "");
+      svg.classList.add("gx-scrub");
+      img.replaceWith(svg);
+      var bar = document.createElement("div"); bar.className = "scrub";
+      bar.innerHTML = '<button type="button"></button><input type="range" min="0" max="7" step="0.01" value="0" aria-label="Turn the input"><output></output>';
+      fig.insertBefore(bar, fig.querySelector("figcaption"));
+      var btn = bar.querySelector("button"), rng = bar.querySelector("input"), out = bar.querySelector("output");
+      var playing = !reduceMotion, turns = 0, last = null;
+      function render() {
+        svg.style.setProperty("--gx-t", (turns * period).toFixed(3));
+        rng.value = turns.toFixed(2);
+        out.textContent = "Input " + turns.toFixed(1) + " turns, output " + (turns / 7).toFixed(2) + (cyc ? " turn backward" : " turn");
+        btn.textContent = playing ? "Pause" : "Play";
+      }
+      function frame(now) {
+        if (!fig.isConnected) return;
+        if (playing) { if (last != null) turns = (turns + (now - last) / 1000 / period) % 7; last = now; } else last = null;
+        render(); requestAnimationFrame(frame);
+      }
+      btn.addEventListener("click", function () { playing = !playing; render(); });
+      rng.addEventListener("input", function () { playing = false; turns = +rng.value; render(); });
+      render(); requestAnimationFrame(frame);
+    }).catch(function () {});
+  }
+
   // ---------- info side + media viewer ----------
   function buildViewer(container) {
     var figs = Array.prototype.slice.call(container.querySelectorAll("figure"));
@@ -395,6 +431,7 @@ if (reduceMotion) {
       main.innerHTML = "";
       var f = figs[idx].cloneNode(true);
       main.appendChild(f);
+      if (f.classList.contains("is-diagram")) enhanceDiagram(f);
       var v = f.querySelector("video");
       if (v) {
         if (reduceMotion) { v.removeAttribute("autoplay"); v.setAttribute("controls", ""); }
