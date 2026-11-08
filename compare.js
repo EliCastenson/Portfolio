@@ -109,11 +109,14 @@
       var g = { W: W, H: H };
       if (cfg.scale === "true") {
         // pixels per inch so the longest object fills ~88% of the stage height
-        var longest = Math.max(cfg.mine.size[1], cfg.ref.size[1]);
-        g.ppi = Math.min(0.88 * H / longest, 0.42 * W / Math.max(cfg.mine.size[0], cfg.ref.size[0]) * 1.0);
-        g.baseW = cfg.mine.size[0] * g.ppi; g.baseH = cfg.mine.size[1] * g.ppi;
+        // both photos are scaled evenly (never stretched) so their lengths match real life
         var b = cfg.ref.box, bw = b[2] - b[0], bh = b[3] - b[1];
-        g.fx = cfg.ref.size[0] * g.ppi / bw; g.fy = cfg.ref.size[1] * g.ppi / bh;   // stretch the photo to real proportions
+        var mineAr = base.naturalWidth / base.naturalHeight, refAr = bw / bh;
+        var longest = Math.max(cfg.mine.size[1], cfg.ref.size[1]);
+        var widest = Math.max(cfg.mine.size[1] * mineAr, cfg.ref.size[1] * refAr);
+        g.ppi = Math.min(0.88 * H / longest, 0.42 * W / widest);
+        g.baseH = cfg.mine.size[1] * g.ppi; g.baseW = g.baseH * mineAr;
+        g.fx = g.fy = cfg.ref.size[1] * g.ppi / bh;
       } else {
         var fit = cfg.mine.fit || 0.62;
         var ar = base.naturalWidth / base.naturalHeight;
@@ -155,7 +158,7 @@
     }
     function sideBySide(animate) {
       if (cfg.scale === "true") {
-        var refW = cfg.ref.size[0] * G.ppi;
+        var b = cfg.ref.box, refW = (b[2] - b[0]) * G.fx;
         S.x = G.baseX + G.baseW + refW * 0.5 + 0.08 * G.W;
         S.y = G.baseY + cfg.mine.target[1] * G.baseH;
       } else {

@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
 
 <main>
 
-  <!-- Hero: my paddle prints in, then its real dimensions draw -->
+  <!-- Hero: a printer that keeps printing real parts from my projects (hero-printer.js) -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-text">
@@ -50,18 +50,24 @@
           <a class="btn solid" href="#projects">See the projects</a>
           <a class="btn" href="#now">What I'm printing now</a>
         </div>
-        <a class="hero-status" href="paddle.html" aria-label="Project 1, the 3D printed pickleball paddle: read the build log">
-          <span class="ok">Print complete</span>
-          <code>paddle_v1.3mf</code>
-          <span class="go">Read the paddle build log</span>
-        </a>
       </div>
-      <figure class="hero-shot dimfig">
-        <a class="layers" href="paddle.html"><img src="images/compare/mine-petg.webp" alt="My 3D printed PETG pickleball paddle, 14.2 inches long and 6.9 inches wide. Opens the paddle build log." width="493" height="856"></a>
-        <span class="dim dim-h" style="--a:0%;--b:100%;--at:-22px"><i></i><i></i><b></b><b></b><em>6.9 in</em></span>
-        <span class="dim dim-v" style="--a:0%;--b:100%;--at:calc(100% + 26px)"><i></i><i></i><b></b><b></b><em>14.2 in</em></span>
-        <div class="hero-plate" aria-hidden="true"></div>
-        <figcaption><strong>Project 1:</strong> my 3D printed paddle. <a href="paddle.html">See how I built it</a></figcaption>
+
+      <figure class="hp" id="hp">
+        <div class="hp-top" aria-hidden="true">
+          <div class="hp-ams"><span class="sp" style="--c:#8794a1"></span><span class="sp" style="--c:#5f666d"></span><span class="sp" style="--c:#4fc4bd"></span><span class="sp" style="--c:#b7c4d3"></span><small>AMS</small></div>
+          <div class="hp-ext"><span class="sp" style="--c:#4a5057"></span><small>TPU</small></div>
+        </div>
+        <div class="hp-box">
+          <canvas class="hp-cv" role="img" aria-label="A 3D printer printing parts from my projects"></canvas>
+          <div class="hp-scr" aria-hidden="true">
+            <span class="hp-state">Heating</span>
+            <code class="hp-file">paddle_plate.3mf</code>
+            <span class="hp-bar"><i></i></span>
+            <span class="hp-read"><span class="hp-noz">25°C</span><span class="hp-layer">0/0</span><span class="hp-pct">0%</span></span>
+          </div>
+        </div>
+        <figcaption class="hp-cap"><span class="hp-what"><strong>Pickleball paddle:</strong> PETG face plate.</span> <a class="hp-link" href="paddle.html">See the build</a></figcaption>
+        <div class="hp-pick" role="group" aria-label="Choose a part to print"></div>
       </figure>
     </div>
   </section>
@@ -615,6 +621,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=11" defer></script>
+<script src="script.js?v=12" defer></script>
+<script src="hero-printer.js?v=12" defer></script>
 </body>
 </html>

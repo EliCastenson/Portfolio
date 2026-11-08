@@ -8,7 +8,9 @@ portfolio/
 ├── paddle.html     Pickleball paddle build log
 ├── rc-car.html     RC car build log
 ├── style.css       All styling (colors are at the top in :root)
-├── script.js       Photo placeholders + footer year
+├── script.js       Photo placeholders, Now printing panel, footer year
+├── hero-printer.js The animated printer at the top of the home page
+├── compare.js      Drag-to-compare overlays on the project pages
 └── images/
     ├── site/       hero.jpg
     ├── paddle/     project photos
@@ -97,5 +99,11 @@ If you open the files straight from your computer, they still animate but the sl
 ## After editing style.css or a .js file
 
 Browsers keep old copies of these files. When you change one, bump the number after `?v=` in the
-`<link>` and `<script>` tags at the top and bottom of each page (e.g. `style.css?v=11` to `style.css?v=12`)
+`<link>` and `<script>` tags at the top and bottom of each page (e.g. `style.css?v=12` to `style.css?v=13`)
 so visitors get the new version.
+
+## The printer at the top of the home page
+
+`hero-printer.js` prints five parts in a loop: the paddle face plate and TPU core, the RC car's bevel gear
+and pull arm, and the AP Research cycloidal disk. Each part's name, project, link, filament, nozzle
+temperature, and color are in the `PARTS` list near the top of the file.
