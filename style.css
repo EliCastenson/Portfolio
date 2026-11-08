@@ -592,7 +592,7 @@ p strong, dd strong, li p strong, figcaption strong { font-weight: 700; color: v
 
 /* Hero ties into the paddle project */
 .hero-shot a.layers { display: block; }
-a.hero-status { text-decoration: none; transition: background .15s; }
+a.hero-status { text-decoration: none; transition: background .15s; border: 1px solid #2c3339; }
 a.hero-status:hover { background: #22282d; }
 a.hero-status .go { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
 .hero-shot figcaption a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }

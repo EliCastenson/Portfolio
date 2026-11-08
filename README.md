@@ -93,3 +93,9 @@ If you open the files straight from your computer, they still animate but the sl
 1. Copy `paddle.html`, rename it (e.g. `drone.html`), and replace the content.
 2. In `index.html`, copy one `<a class="card">…</a>` block inside `.cards` and point it at the new page.
 3. Add a link to the new page in each page's `<nav>`.
+
+## After editing style.css or a .js file
+
+Browsers keep old copies of these files. When you change one, bump the number after `?v=` in the
+`<link>` and `<script>` tags at the top and bottom of each page (e.g. `style.css?v=11` to `style.css?v=12`)
+so visitors get the new version.
