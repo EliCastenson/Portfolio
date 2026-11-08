@@ -50,19 +50,18 @@
           <a class="btn solid" href="#projects">See the projects</a>
           <a class="btn" href="#now">What I'm printing now</a>
         </div>
-        <div class="hero-status" aria-label="Printer status">
+        <a class="hero-status" href="paddle.html" aria-label="Project 1, the 3D printed pickleball paddle: read the build log">
           <span class="ok">Print complete</span>
           <code>paddle_v1.3mf</code>
-          <span>PETG plates, TPU core</span>
-          <span>Bambu Lab X1C</span>
-        </div>
+          <span class="go">Read the paddle build log</span>
+        </a>
       </div>
       <figure class="hero-shot dimfig">
-        <div class="layers"><img src="images/compare/mine-petg.webp" alt="My 3D printed PETG pickleball paddle, 14.2 inches long and 6.9 inches wide" width="493" height="856"></div>
+        <a class="layers" href="paddle.html"><img src="images/compare/mine-petg.webp" alt="My 3D printed PETG pickleball paddle, 14.2 inches long and 6.9 inches wide. Opens the paddle build log." width="493" height="856"></a>
         <span class="dim dim-h" style="--a:0%;--b:100%;--at:-22px"><i></i><i></i><b></b><b></b><em>6.9 in</em></span>
         <span class="dim dim-v" style="--a:0%;--b:100%;--at:calc(100% + 26px)"><i></i><i></i><b></b><b></b><em>14.2 in</em></span>
         <div class="hero-plate" aria-hidden="true"></div>
-        <figcaption>My PETG paddle, printed on a Bambu Lab X1C.</figcaption>
+        <figcaption><strong>Project 1:</strong> my 3D printed paddle. <a href="paddle.html">See how I built it</a></figcaption>
       </figure>
     </div>
   </section>
@@ -124,7 +123,7 @@
     <div class="wrap">
       <div class="process-head">
         <h2>Every project builds up in layers</h2>
-        <p>Both projects went through the same loop. The top layers are where I learned the most: something breaks, I find out exactly why, and the next version is better for it. <span class="hint">Open any layer to see how it played out in each project.</span></p>
+        <p>Both projects went through the same loop. The top layers are where I learned the most: <strong>something breaks, I find out exactly why</strong>, and the next version is better for it. <span class="hint">Open any layer to see how it played out in each project.</span></p>
       </div>
       <ol class="stack" id="stack">
           <li>
@@ -135,13 +134,13 @@
                 <span class="chev" aria-hidden="true"></span>
               </summary>
               <div class="layer-detail">
-                <p class="layer-intro">Before I model anything, I want to know how the real product works, how it's made, and whether anyone has already tried building one. That tells me what has to stay the same and what I can change for a 3D printer.</p>
+                <p class="layer-intro">Before I model anything, I want to know <strong>how the real product works</strong>, how it's made, and whether anyone has already tried building one. That tells me what has to stay the same and what I can change for a 3D printer.</p>
                 <div class="layer-cols">
               <div class="layer-col">
                 <figure class="ratio-4-3"><img src="images/paddle/sketches.jpg" alt="Pencil sketches of the paddle face, TPU core, and insert pocket" loading="lazy"></figure>
                 <div>
                   <h4>In the paddle</h4>
-                  <p>I researched how commercial paddles work and how they're manufactured. High-end paddles use a polypropylene honeycomb core between stiff face sheets. I found one 3D printed paddle project and borrowed its approach: TPU sandwiched between harder plates. They used ABS; I used PETG.</p>
+                  <p>I researched how commercial paddles work and how they're manufactured. High-end paddles use a <strong>polypropylene honeycomb core</strong> between stiff face sheets. I found one 3D printed paddle project and borrowed its approach: <strong>TPU sandwiched between harder plates</strong>. They used ABS; I used PETG.</p>
                   <a class="more" href="paddle.html#research">See it in the build log</a>
                 </div>
               </div>
@@ -149,7 +148,7 @@
                 <figure class="ratio-4-3"><img src="images/rc-car/electronics.jpg" alt="Top view of the car's electronics" loading="lazy"></figure>
                 <div>
                   <h4>In the RC car</h4>
-                  <p>I researched what most RC cars have, and my dad showed me pictures of his from the 1980s. Every one has a radio receiver, a BLDC motor, an ESC to drive the motor's phases, a steering servo, and a battery. I ordered one of each, picking for value.</p>
+                  <p>I researched what most RC cars have, and my dad showed me pictures of his from the 1980s. Every one has a radio receiver, a BLDC motor, an ESC to drive the motor's phases, a steering servo, and a battery. <strong>I ordered one of each</strong>, picking for value.</p>
                   <a class="more" href="rc-car.html#research">See it in the build log</a>
                 </div>
               </div>
@@ -165,13 +164,13 @@
                 <span class="chev" aria-hidden="true"></span>
               </summary>
               <div class="layer-detail">
-                <p class="layer-intro">Next I turn the research into parts my printer can actually make. That means planning around build plate size, how parts join together, and how accurate the printer really is.</p>
+                <p class="layer-intro">Next I turn the research into <strong>parts my printer can actually make</strong>. That means planning around build plate size, how parts join together, and how accurate the printer really is.</p>
                 <div class="layer-cols">
               <div class="layer-col">
                 <figure class="ratio-4-3"><img src="images/paddle/parts.jpg" alt="All the printed paddle parts laid out" loading="lazy"></figure>
                 <div>
                   <h4>In the paddle</h4>
-                  <p>A TPU honeycomb core with a PETG plate on each side. A rim guard with a circular key presses into a channel around the core, and the plates join at the handle with a dovetail. I kept the face slightly small to fit my build plate and made the handle longer than standard.</p>
+                  <p>A <strong>TPU honeycomb core with a PETG plate on each side</strong>. A rim guard with a circular key presses into a channel around the core, and the plates join at the handle with a dovetail. I kept the face slightly small to fit my build plate and made the handle longer than standard.</p>
                   <a class="more" href="paddle.html#design">See it in the build log</a>
                 </div>
               </div>
@@ -179,7 +178,7 @@
                 <figure class="ratio-4-3"><img src="images/rc-car/sketch.jpg" alt="Hand sketch of the RC car layout" loading="lazy"></figure>
                 <div>
                   <h4>In the RC car</h4>
-                  <p>My first design put every part in one CAD file, so moving one thing meant moving everything. For version 2, I gave each part its own file and avoided joints that needed extreme accuracy from my printer.</p>
+                  <p>My first design put every part in one CAD file, so moving one thing meant moving everything. For version 2, I <strong>gave each part its own file</strong> and avoided joints that needed extreme accuracy from my printer.</p>
                   <a class="more" href="rc-car.html#rethink">See it in the build log</a>
                 </div>
               </div>
@@ -201,7 +200,7 @@
                 <figure class="ratio-4-3"><img src="images/paddle/core.jpg" alt="The printed TPU honeycomb core" loading="lazy"></figure>
                 <div>
                   <h4>In the paddle</h4>
-                  <p>Printed on my Bambu Lab X1C in PETG, TPU, and PETG-CF, then glued together. An M3 brass heat-set insert in a hex pocket fuses the plates, and a screw in the bottom of the handle holds the whole assembly together.</p>
+                  <p>Printed on my Bambu Lab X1C in PETG, TPU, and PETG-CF, then glued together. An <strong>M3 brass heat-set insert</strong> in a hex pocket fuses the plates, and a screw in the bottom of the handle holds the whole assembly together.</p>
                   <a class="more" href="paddle.html#design">See it in the build log</a>
                 </div>
               </div>
@@ -209,7 +208,7 @@
                 <figure class="ratio-4-3 pos-top"><img src="images/rc-car/notes-hardware.jpg" alt="Handwritten list of inserts, screws, and rods" loading="lazy"></figure>
                 <div>
                   <h4>In the RC car</h4>
-                  <p>Version 1 had no fasteners, so prints rarely fit. I ordered heat-set inserts and M3–M5 screws and fastened parts together instead of printing them in place. It worked much better.</p>
+                  <p>Version 1 had no fasteners, so prints rarely fit. I ordered heat-set inserts and M3–M5 screws and <strong>fastened parts together instead of printing them in place</strong>. It worked much better.</p>
                   <a class="more" href="rc-car.html#rethink">See it in the build log</a>
                 </div>
               </div>
@@ -231,7 +230,7 @@
                 <figure class="ratio-4-3"><img src="images/paddle/handle.jpg" alt="A printed handle piece" loading="lazy"></figure>
                 <div>
                   <h4>In the paddle</h4>
-                  <p>Before I added glue, the layers slid against each other and the paddle flexed too much to play with. Later, the PETG-CF paddle split on a forehand when the top half came off.</p>
+                  <p>Before I added glue, <strong>the layers slid against each other</strong> and the paddle flexed too much to play with. Later, the <strong>PETG-CF paddle split on a forehand</strong> when the top half came off.</p>
                   <a class="more" href="paddle.html#failures">See it in the build log</a>
                 </div>
               </div>
@@ -239,7 +238,7 @@
                 <figure class="ratio-4-3"><img src="images/rc-car/shredded-gear.jpg" alt="The shredded PETG-CF bevel gear" loading="lazy"></figure>
                 <div>
                   <h4>In the RC car</h4>
-                  <p>My printed differential gears weren't accurate enough to carry load. The PETG-CF bevel gear shredded the instant the motor drove it. And my first pull arms gave so much positive camber the car couldn't even move.</p>
+                  <p>My printed differential gears <strong>weren't accurate enough to carry load</strong>. The <strong>PETG-CF bevel gear shredded</strong> the instant the motor drove it. And my first pull arms gave so much positive camber the car couldn't even move.</p>
                   <a class="more" href="rc-car.html#drivetrain">See it in the build log</a>
                 </div>
               </div>
@@ -261,7 +260,7 @@
                 <figure class="ratio-4-3"><img src="images/paddle/plate.jpg" alt="A PETG face plate" loading="lazy"></figure>
                 <div>
                   <h4>In the paddle</h4>
-                  <p>The floppy feel came from the layers slipping, not from soft material. The split traced back to the brass insert: PETG-CF handles heat better than PETG, so the plastic around it never got hot enough to bond.</p>
+                  <p>The floppy feel <strong>came from the layers slipping, not from soft material</strong>. The split <strong>traced back to the brass insert</strong>: PETG-CF handles heat better than PETG, so the plastic around it never got hot enough to bond.</p>
                   <a class="more" href="paddle.html#failures">See it in the build log</a>
                 </div>
               </div>
@@ -269,7 +268,7 @@
                 <figure class="ratio-4-3 pos-top"><img src="images/rc-car/sleeve-calcs.jpg" alt="Hand calculations for the adapter sleeve" loading="lazy"></figure>
                 <div>
                   <h4>In the RC car</h4>
-                  <p>Most drivetrain problems came from parts I never checked against each other. The metal gear's bore was too big for the motor shaft, the sleeve we machined came out oversized, and its walls were too thin for a grub screw. The short suspension arms came from mixing up a radius and a diameter.</p>
+                  <p>Most drivetrain problems came from <strong>parts I never checked against each other</strong>. The metal gear's bore was too big for the motor shaft, the sleeve we machined came out oversized, and its walls were too thin for a grub screw. The short suspension arms came from mixing up a radius and a diameter.</p>
                   <a class="more" href="rc-car.html#drivetrain">See it in the build log</a>
                 </div>
               </div>
@@ -291,7 +290,7 @@
                 <figure class="ratio-4-3"><img src="images/paddle/card.jpg" alt="The two finished paddles" loading="lazy"></figure>
                 <div>
                   <h4>In the paddle</h4>
-                  <p>Gluing the plates to the core stiffened the paddle. Packing regular PETG into the hex pocket gave the insert something to melt into, and it's held up since. Next: an ABS version, testing TPU core thickness, and a bigger face on the same build plate.</p>
+                  <p><strong>Gluing the plates to the core stiffened the paddle</strong>. Packing regular <strong>PETG into the hex pocket</strong> gave the insert something to melt into, and it's held up since. Next: an ABS version, testing TPU core thickness, and a bigger face on the same build plate.</p>
                   <a class="more" href="paddle.html#results">See it in the build log</a>
                 </div>
               </div>
@@ -299,7 +298,7 @@
                 <figure class="ratio-4-3"><img src="images/rc-car/rear.jpg" alt="Rear suspension and shocks" loading="lazy"></figure>
                 <div>
                   <h4>In the RC car</h4>
-                  <p>I designed a part to fix the short arms, adjusted pull arm length until all four wheels had slightly negative camber, and bent M2 stainless rods into a steering linkage with near-identical toe. After all of that, the car drove for the first time.</p>
+                  <p>I designed a part to fix the short arms, adjusted pull arm length until all four wheels had <strong>slightly negative camber</strong>, and bent M2 stainless rods into a steering linkage with near-identical toe. After all of that, <strong>the car drove for the first time</strong>.</p>
                   <a class="more" href="rc-car.html#chassis">See it in the build log</a>
                 </div>
               </div>
@@ -336,7 +335,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Two v1 paddles finished</button>
               <template>
                 <div class="insp-media"><figure><img src="images/paddle/card.jpg" alt="The two finished paddles standing side by side"><figcaption>Both v1 paddles.</figcaption></figure><figure class="is-video"><video src="videos/pickle-game.mp4" poster="videos/pickle-game-poster.jpg" controls playsinline preload="metadata" aria-label="Video of a game outside with both paddles"></video><figcaption>In a game: PETG on the left, PETG-CF on the right.</figcaption></figure><figure><img src="images/paddle/finished.jpg" alt="Both finished paddles with grips, next to a pickleball"><figcaption>Gripped and ready to play.</figcaption></figure><figure class="is-video"><video src="videos/pickle-slowmo.mp4" poster="videos/pickle-slowmo-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Slow-motion video of the paddle hitting a ball"></video><figcaption>Slow motion: the paddle hitting the ball.</figcaption></figure></div>
-                <p>Version 1 is done: two playable paddles, one in PETG and one in PETG-CF. Each is a TPU honeycomb core between two plates, locked together by the rim guard, a dovetail handle, and a heat-set insert.</p><p>Both have held up in real games, including the PETG-CF paddle after I fixed its insert.</p>
+                <p>Version 1 is done: <strong>two playable paddles</strong>, one in PETG and one in PETG-CF. Each is a TPU honeycomb core between two plates, locked together by the rim guard, a dovetail handle, and a heat-set insert.</p><p>Both have <strong>held up in real games</strong>, including the PETG-CF paddle after I fixed its insert.</p>
                 <ul class="insp-facts"><li>~$12 material each</li><li>Plays softer than typical</li><li>More control &amp; spin</li></ul>
               </template>
             </li>
@@ -344,7 +343,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">TPU core thickness test</button>
               <template>
                 <div class="insp-media"><figure><img src="images/paddle/core.jpg" alt="The printed black TPU honeycomb core"><figcaption>The TPU honeycomb core.</figcaption></figure><figure><img src="images/paddle/profile.jpg" alt="A finished paddle seen edge-on, showing its thickness"><figcaption>Edge-on: the core sets the thickness.</figcaption></figure><figure><img src="images/paddle/sketches.jpg" alt="Pencil sketches of the paddle, TPU core, and insert pocket"><figcaption>My original sketches of the core.</figcaption></figure></div>
-                <p>Both paddles play softer than a typical paddle. The flexible TPU core is the part that absorbs impact, so it's the first thing I'm changing.</p><p>I'm testing how the thickness of the TPU core changes how soft or stiff the paddle feels on contact.</p>
+                <p>Both paddles <strong>play softer than a typical paddle</strong>. The flexible TPU core is the part that absorbs impact, so it's the first thing I'm changing.</p><p>I'm testing how the <strong>thickness of the TPU core</strong> changes how soft or stiff the paddle feels on contact.</p>
                 <ul class="insp-facts"><li>Material: TPU</li><li>Variable: core thickness</li></ul><p class="insp-q"><b>The question:</b> How much of the paddle's feel comes from the core alone?</p>
               </template>
             </li>
@@ -352,7 +351,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">ABS plates (stiffer)</button>
               <template>
                 <div class="insp-media"><figure><img src="images/paddle/plate.jpg" alt="A printed PETG face plate held in hand"><figcaption>A v1 PETG face plate.</figcaption></figure><figure><img src="images/paddle/plate-flat.jpg" alt="A PETG face plate on the counter"><figcaption>The plates take every hit.</figcaption></figure><figure><img src="images/paddle/glue.jpg" alt="Spraying adhesive onto the paddle plates"><figcaption>Bonding plates to the core.</figcaption></figure></div>
-                <p>The 3D printed paddle project I learned from used ABS for its plates. ABS is stiffer than PETG, but I only had PETG filaments on hand for version 1.</p><p>Since the face plates take every hit, swapping their material is the next way to change the feel.</p>
+                <p>The 3D printed paddle project I learned from used ABS for its plates. <strong>ABS is stiffer than PETG</strong>, but I only had PETG filaments on hand for version 1.</p><p>Since the face plates take every hit, swapping their material is the next way to change the feel.</p>
                 <ul class="insp-facts"><li>Material: ABS</li><li>Compare against PETG</li></ul>
               </template>
             </li>
@@ -360,7 +359,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Bigger face, same build plate</button>
               <template>
                 <div class="insp-media"><figure><img src="images/paddle/parts.jpg" alt="All the printed paddle parts laid out"><figcaption>Every v1 part, sized to fit my build plate.</figcaption></figure><figure><img src="images/paddle/plate-flat.jpg" alt="A PETG face plate on the counter"><figcaption>The v1 face is slightly smaller than standard.</figcaption></figure></div>
-                <p>I kept the version 1 face slightly smaller than a standard paddle so it would fit on my printer's build plate.</p><p>Next, I'm changing the design so a regulation-size face can be printed on the same printer.</p>
+                <p>I kept the version 1 face slightly smaller than a standard paddle so it would fit on my printer's build plate.</p><p>Next, I'm changing the design so a <strong>regulation-size face</strong> can be printed on the same printer.</p>
                 <ul class="insp-facts"><li>Goal: regulation-size face</li><li>Same Bambu Lab X1C</li></ul>
               </template>
             </li>
@@ -368,7 +367,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Thinner but stiffer</button>
               <template>
                 <div class="insp-media"><figure><img src="images/paddle/profile.jpg" alt="A finished paddle seen edge-on"><figcaption>Version 1's thickness.</figcaption></figure><figure><img src="images/paddle/finished.jpg" alt="Both finished paddles"><figcaption>The v1 paddles to beat.</figcaption></figure></div>
-                <p>A thinner paddle usually flexes more, so making it thinner <em>and</em> stiffer means two goals pulling against each other.</p><p>Figuring out that trade-off is the next design challenge.</p>
+                <p>A thinner paddle usually flexes more, so making it thinner <em>and</em> stiffer means <strong>two goals pulling against each other</strong>.</p><p>Figuring out that trade-off is the next design challenge.</p>
                 <p class="insp-q"><b>The question:</b> Can I get a thinner paddle without losing stiffness?</p>
               </template>
             </li>
@@ -387,7 +386,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Steering linkage &amp; toe</button>
               <template>
                 <div class="insp-media"><figure class="is-video"><video src="videos/steering-demo.mp4" poster="videos/steering-demo-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video of the front wheels steering left and right"></video><figcaption>The steering working.</figcaption></figure><figure><img src="images/rc-car/notes-steering.jpg" alt="A dimensioned part sketch with 'steering next!'"><figcaption>My notebook: steering was next.</figcaption></figure><figure><img src="images/rc-car/notes-redesign.jpg" alt="The handwritten redesign list"><figcaption>"Fix steering from jumping" was on the list.</figcaption></figure></div>
-                <p>I bent M2 stainless steel rods by hand to make the steering linkage. After some practice, I could bend them precisely enough that the toe on both front wheels came out almost identical.</p><p>Fixing the steering from jumping was one of the items on my version 2 redesign list.</p>
+                <p>I <strong>bent M2 stainless steel rods by hand</strong> to make the steering linkage. After some practice, I could bend them precisely enough that the toe on both front wheels came out <strong>almost identical</strong>.</p><p>Fixing the steering from jumping was one of the items on my version 2 redesign list.</p>
                 <ul class="insp-facts"><li>M2 stainless rod</li><li>Hand-bent</li><li>Near-identical toe</li></ul>
               </template>
             </li>
@@ -395,7 +394,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Camber on all four wheels</button>
               <template>
                 <div class="insp-media"><figure><img src="images/rc-car/rear.jpg" alt="Rear suspension and shocks"><figcaption>Rear suspension and shocks.</figcaption></figure><figure><img src="images/rc-car/hero.jpg" alt="The assembled RC car"><figcaption>All four wheels at slightly negative camber.</figcaption></figure><figure><img src="images/rc-car/shock.jpg" alt="Measuring a shock with calipers"><figcaption>Measuring a shock.</figcaption></figure></div>
-                <p>My first pull arms, which support the top of each wheel, gave so much positive camber that the car couldn't move. I kept redesigning and testing their length until all four wheels sat at slightly negative camber.</p><p>Along the way I also fixed suspension arms I'd made too short by using a radius where I meant a diameter.</p>
+                <p>My first pull arms, which support the top of each wheel, gave <strong>so much positive camber that the car couldn't move</strong>. I kept redesigning and testing their length until all four wheels sat at <strong>slightly negative camber</strong>.</p><p>Along the way I also fixed suspension arms I'd made too short by using a radius where I meant a diameter.</p>
                 <ul class="insp-facts"><li>Extreme positive → slightly negative</li><li>Pull arm length</li></ul>
               </template>
             </li>
@@ -411,8 +410,8 @@
               <button type="button" class="step-btn" aria-controls="inspector">Motor shaft adapter</button>
               <template>
                 <div class="insp-media"><figure><img src="images/rc-car/shredded-gear.jpg" alt="The shredded PETG-CF bevel gear"><figcaption>The PETG-CF bevel gear after one try.</figcaption></figure><figure><img src="images/rc-car/sleeve-calcs.jpg" alt="Hand calculations for the adapter sleeve"><figcaption>Planning the adapter sleeve.</figcaption></figure><figure><img src="images/rc-car/grub-screw.jpg" alt="Tightening the grub screw on the sleeve"><figcaption>Tightening the grub screw.</figcaption></figure><figure><img src="images/rc-car/motor.jpg" alt="The motor mount with the metal bevel gear"><figcaption>The motor with the metal bevel gear.</figcaption></figure></div>
-                <p>The drivetrain is where most of my time has gone. My printed differential couldn't carry load, the PETG-CF bevel gear shredded on the first drive, the metal gear didn't fit the motor shaft, and the machined aluminum sleeve stripped under its grub screw.</p>
-                <p>Now I'm designing an adapter that either sets onto or fits over the motor shaft. I'm deciding between ordering it from a machining service like PCBWay or making it from the other end of the shaft I already ordered.</p>
+                <p>The drivetrain is where <strong>most of my time has gone</strong>. My printed differential couldn't carry load, the PETG-CF bevel gear shredded on the first drive, the metal gear didn't fit the motor shaft, and the machined aluminum sleeve stripped under its grub screw.</p>
+                <p>Now I'm <strong>designing an adapter</strong> that either sets onto or fits over the motor shaft. I'm deciding between ordering it from a machining service like PCBWay or making it from the other end of the shaft I already ordered.</p>
                 <ul class="insp-facts"><li>Order from PCBWay?</li><li>Or reuse the spare shaft end?</li><li>Lesson: pick parts as a system</li></ul>
                 <p class="insp-q"><b>The question:</b> Which option gives a strong, accurate fit on the motor shaft?</p>
               </template>
@@ -421,7 +420,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Formula RC league</button>
               <template>
                 <div class="insp-media"><figure><img src="images/rc-car/card.jpg" alt="The finished RC car"><figcaption>The car that started it.</figcaption></figure><figure><img src="images/rc-car/sketch.jpg" alt="Hand sketch of the RC car layout"><figcaption>Where it began: my first layout sketch.</figcaption></figure></div>
-                <p>The reason I started this car: an idea for a "Formula RC" league in my engineering club. Once the drivetrain is solid, getting the league going is the next step.</p><p><span class="todo">Add your plan: how the league would work and what you're doing next.</span></p>
+                <p>The reason I started this car: an idea for a <strong>"Formula RC" league</strong> in my engineering club. Once the drivetrain is solid, getting the league going is the next step.</p><p><span class="todo">Add your plan: how the league would work and what you're doing next.</span></p>
                 <ul class="insp-facts"><li>Engineering club</li></ul>
               </template>
             </li>
@@ -440,7 +439,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Research question &amp; literature review</button>
               <template>
                 <div class="insp-media"><figure class="is-diagram"><img src="images/ap-research/planetary.svg" alt="Diagram of a 7:1 single-stage planetary gearbox: a 12-tooth sun, three 30-tooth planets, and a fixed 72-tooth ring"><figcaption>Planetary: one way to get 7:1 (illustration).</figcaption></figure><figure class="is-diagram"><img src="images/ap-research/cycloidal.svg" alt="Diagram of a 7:1 cycloidal drive: a 7-lobe disk on an eccentric bearing inside 8 ring pins"><figcaption>Cycloidal: one way to get 7:1 (illustration).</figcaption></figure></div>
-                <p>Low-cost robots rely more and more on 3D printed speed reducers, which let small, weak motors drive heavy joints. Cycloidal drives and planetary gearboxes are the two most commonly printed designs, and several studies claim cycloidal drives suit printing better.</p><p>But most published work tests one design by itself, at different ratios and with different methods, so the results can't be compared. The few studies that compare designs on one test bench leave out efficiency, backlash, or noise.</p>
+                <p>Low-cost robots rely more and more on 3D printed speed reducers, which let small, weak motors drive heavy joints. Cycloidal drives and planetary gearboxes are the <strong>two most commonly printed designs</strong>, and several studies claim cycloidal drives suit printing better.</p><p>But most published work tests one design by itself, at different ratios and with different methods, so <strong>the results can't be compared</strong>. The few studies that compare designs on one test bench leave out efficiency, backlash, or noise.</p>
                 <ul class="insp-facts"><li>Cycloidal vs. planetary</li><li>7:1 ratio</li><li>PLA</li></ul><p class="insp-q"><b>My research question:</b> How do student-designed, 3D printed (PLA) cycloidal and single-stage planetary speed reducers with an identical 7:1 reduction ratio compare in efficiency, noise, and backlash when printed and tested under identical conditions?</p>
               </template>
             </li>
@@ -448,7 +447,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">IRB form &amp; method plan</button>
               <template>
                 
-                <p>The study is a quantitative, comparative experiment with no human participants. It follows the approach of Roozing and Roozing (2024) and Bezzini et al. (2024), who both compared printed designs on one shared test rig.</p><p>I'll build one prototype of each design and repeat every test five times. The conclusions apply to these two prototypes, which I'll state as a limitation.</p>
+                <p>The study is a quantitative, comparative experiment with no human participants. It follows the approach of Roozing and Roozing (2024) and Bezzini et al. (2024), who both compared printed designs on one shared test rig.</p><p>I'll build <strong>one prototype of each design</strong> and <strong>repeat every test five times</strong>. The conclusions apply to these two prototypes, which I'll state as a limitation.</p>
                 <ul class="insp-facts"><li>No human participants</li><li>5 trials per test</li><li>One shared test rig</li></ul>
               </template>
             </li>
@@ -456,7 +455,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Design both reducers in CAD</button>
               <template>
                 <div class="insp-media"><figure class="is-diagram"><img src="images/ap-research/planetary.svg" alt="Diagram of a 7:1 single-stage planetary gearbox: a 12-tooth sun, three 30-tooth planets, and a fixed 72-tooth ring"><figcaption>Planetary: one way to get 7:1 (illustration).</figcaption></figure><figure class="is-diagram"><img src="images/ap-research/cycloidal.svg" alt="Diagram of a 7:1 cycloidal drive: a 7-lobe disk on an eccentric bearing inside 8 ring pins"><figcaption>Cycloidal: one way to get 7:1 (illustration).</figcaption></figure></div>
-                <p>Both reducers will be exactly 7:1, with the same outer size, mounting flange, input coupling, and output bearing, so the only difference is what's inside.</p><p>I'm limiting each design to three iterations and documenting the process.</p>
+                <p>Both reducers will be <strong>exactly 7:1</strong>, with the same outer size, mounting flange, input coupling, and output bearing, so <strong>the only difference is what's inside</strong>.</p><p>I'm limiting each design to three iterations and documenting the process.</p>
                 <ul class="insp-facts"><li>Exactly 7:1</li><li>Same outer size &amp; mounts</li><li>Max 3 iterations each</li></ul>
               </template>
             </li>
@@ -464,7 +463,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Calibrate, print &amp; assemble</button>
               <template>
                 
-                <p>I'll print a tolerance test piece, calibrate my Bambu X1C, and lock one slicer profile. Then I'll print one of each design, plus a spare sun gear and a spare disk pair.</p><p>I'll measure the key dimensions with calipers and reprint any meshing part that's off by more than 0.1 mm. Each unit gets identical hardware and the same weighed amount of grease, then a 20-minute break-in.</p>
+                <p>I'll print a tolerance test piece, <strong>calibrate my Bambu X1C</strong>, and lock one slicer profile. Then I'll print one of each design, plus a spare sun gear and a spare disk pair.</p><p>I'll measure the key dimensions with calipers and reprint any meshing part that's <strong>off by more than 0.1 mm</strong>. Each unit gets identical hardware and the same weighed amount of grease, then a 20-minute break-in.</p>
                 <ul class="insp-facts"><li>Tolerance: ±0.1 mm</li><li>Same grease, by weight</li><li>20 min break-in</li></ul>
               </template>
             </li>
@@ -472,7 +471,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Calibrate the rig &amp; pilot test</button>
               <template>
                 
-                <p>I'll calibrate the motor with a resistance test and a no-load test, and record the background noise and the motor's noise on its own so they can be subtracted later.</p><p>Then I'll run a pilot test on each design, fix any problems, and freeze the procedure. The pilot data gets thrown out.</p>
+                <p>I'll calibrate the motor with a resistance test and a no-load test, and record the background noise and the motor's noise on its own so they can be subtracted later.</p><p>Then I'll run a <strong>pilot test</strong> on each design, fix any problems, and freeze the procedure. <strong>The pilot data gets thrown out</strong>.</p>
                 <ul class="insp-facts"><li>Motor losses separated out</li><li>Pilot data discarded</li></ul>
               </template>
             </li>
@@ -488,7 +487,7 @@
               <button type="button" class="step-btn" aria-controls="inspector">Analyze &amp; write up</button>
               <template>
                 
-                <p>All statistics run in JASP: two-way ANOVAs for efficiency (design × load) and noise (design × speed), a Welch's t-test for backlash, and a paired t-test for wear. Every comparison reports a 95% confidence interval and an effect size.</p><p>Metal gearbox data predicts the planetary will be more efficient and the cycloidal will have less backlash, but printed studies suggest that pattern may reverse in plastic. Since there are no testing standards for printed gears, the low-cost, repeatable test method is a contribution other builders can use too.</p>
+                <p>All statistics run in JASP: two-way ANOVAs for efficiency (design × load) and noise (design × speed), a Welch's t-test for backlash, and a paired t-test for wear. Every comparison reports a <strong>95% confidence interval and an effect size</strong>.</p><p>Metal gearbox data predicts the planetary will be more efficient and the cycloidal will have less backlash, but printed studies suggest that <strong>pattern may reverse in plastic</strong>. Since there are no testing standards for printed gears, the low-cost, repeatable test method is a contribution other builders can use too.</p>
                 <ul class="insp-facts"><li>JASP</li><li>ANOVA + t-tests</li><li>Effect sizes</li></ul><p class="insp-q"><b>Why it matters:</b> Printed reducers make up the joints for legged robots, exoskeletons, and humanoids. The results will help builders choose a design for low-ratio printed actuators.</p>
               </template>
             </li>
@@ -548,7 +547,7 @@
       <div class="about-grid">
         <div>
           <h2>About me</h2>
-          <p>I'm an aspiring mechanical engineer in high school who enjoys designing and building projects that solve real problems for people. Through club work and personal builds, I like applying mechanical and systems thinking to create practical, durable solutions.</p>
+          <p>I'm an aspiring mechanical engineer in high school who enjoys designing and building projects that <strong>solve real problems for people</strong>. Through club work and personal builds, I like applying mechanical and systems thinking to create <strong>practical, durable solutions</strong>.</p>
           <p>I'm excited to collaborate with teams, step into leadership when needed, and explore internships or project opportunities where I can keep learning and contributing.</p>
           <p>Outside of building, I play soccer and pickleball, and I'm part of Engineering Club, Spanish Club, Machine Learning Club, and IH Experienceships.</p>
         </div>

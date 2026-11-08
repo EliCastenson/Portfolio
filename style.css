@@ -585,3 +585,15 @@ html, body { overflow-x: clip; }
 .hero-grid { align-items: center; }
 .cmp-loading[hidden] { display: none; }
 @media (max-width: 860px) { .hero-shot { width: min(46%, 190px); } .p-hero-media.cut { width: min(46%, 200px); } }
+
+/* Skim-reading: bold key phrases in longer paragraphs */
+p strong, dd strong, li p strong, figcaption strong { font-weight: 700; color: var(--ink); }
+.muted strong { color: var(--ink); }
+
+/* Hero ties into the paddle project */
+.hero-shot a.layers { display: block; }
+a.hero-status { text-decoration: none; transition: background .15s; }
+a.hero-status:hover { background: #22282d; }
+a.hero-status .go { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+.hero-shot figcaption a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.hero-shot figcaption a:hover { color: var(--ink); }
