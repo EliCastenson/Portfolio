@@ -78,6 +78,16 @@ data removed: `rc-first-drive`, `steering-demo`, `pickle-game`, `pickle-slowmo`,
 
 **Don't upload your original phone videos.** GitHub's website won't accept files over 25 MB, and the site doesn't use them.
 
+## Comparison overlays
+
+`paddle.html` and `rc-car.html` each have a drag-to-compare section (`compare.js`). The reference photos
+load straight from Wikimedia Commons (credited under each one) and are cut out of their backgrounds in
+the browser. Settings live in each `.cmp` element's `data-config`: real sizes in inches for the paddle,
+and part-marker positions (percent of each photo) for the RC car.
+
+The gear diagrams in the AP Research step get a "turn the input" slider when the site is served online.
+If you open the files straight from your computer, they still animate but the slider doesn't appear.
+
 ## Adding another project
 
 1. Copy `paddle.html`, rename it (e.g. `drone.html`), and replace the content.
