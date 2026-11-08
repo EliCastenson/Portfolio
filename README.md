@@ -100,13 +100,14 @@ If you open the files straight from your computer, they still animate but the sl
 ## After editing style.css or a .js file
 
 Browsers keep old copies of these files. When you change one, bump the number after `?v=` in the
-`<link>` and `<script>` tags at the top and bottom of each page (e.g. `style.css?v=13` to `style.css?v=14`)
+`<link>` and `<script>` tags at the top and bottom of each page (e.g. `style.css?v=14` to `style.css?v=15`)
 so visitors get the new version.
 
 ## The printer at the top of the home page
 
-`hero-printer.js` prints five parts in a loop: the paddle face plate and TPU core, the RC car's bevel gear
-and pull arm, and the AP Research cycloidal disk. Each part's name, project, link, filament, nozzle
+`hero-printer.js` prints six parts in a shuffled order that changes on every visit (each part prints once
+before any repeats): the paddle face plate and TPU core, the RC car's bevel gear and pull arm, and the AP
+Research cycloidal disk and planet gear. Each part's name, project, link, filament, nozzle
 temperature, and color are in the `PARTS` list near the top of the file.
 
 ## The timeline page

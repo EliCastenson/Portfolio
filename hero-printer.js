@@ -83,7 +83,18 @@
         circle(c, r, r, r); circle(c, w - r, r, r);
       },
       rule: "nonzero",
-      holes: function (c, w, h) { var r = h / 2; circle(c, r, r, r * 0.46); circle(c, w - r, r, r * 0.46); } }
+      holes: function (c, w, h) { var r = h / 2; circle(c, r, r, r * 0.46); circle(c, w - r, r, r * 0.46); } },
+    { name: "Planet gear, 30 teeth", chip: "Planet gear", proj: "AP Research", href: "#now", file: "planet_gear_30t.3mf", mat: "PLA", noz: 220, color: "#4fc4bd", spool: 2, ar: 1,
+      draw: function (c, w) {
+        var R = w / 2, n = 30;                                   // one of three planets in the 7:1 planetary (sun 12, ring 72)
+        polar(c, R, R, 1800, function (a) {
+          var u = (a / (Math.PI * 2) * n) % 1;
+          var t = u < 0.12 ? u / 0.12 : u < 0.42 ? 1 : u < 0.54 ? 1 - (u - 0.42) / 0.12 : 0;
+          return R * (0.9 + 0.1 * t);
+        });
+        circle(c, R, R, R * 0.3);                               // bearing bore
+      },
+      edge: function (c, w) { circle(c, w / 2, w / 2, w * 0.36); } }
   ];
 
   // ---------- part images and per-layer spans ----------
@@ -132,6 +143,16 @@
   var PRINT_SECONDS = 6.5;
 
   function part() { return PARTS[S.i]; }
+  // shuffled order: every part prints once before any repeats, never the same part twice in a row
+  var bag = [];
+  function nextPart() {
+    if (!bag.length) {
+      bag = PARTS.map(function (_, k) { return k; });
+      for (var k = bag.length - 1; k > 0; k--) { var r = Math.floor(Math.random() * (k + 1)), t = bag[k]; bag[k] = bag[r]; bag[r] = t; }
+      if (bag[0] === S.i && bag.length > 1) { var sw = bag[0]; bag[0] = bag[1]; bag[1] = sw; }
+    }
+    return bag.shift();
+  }
   function bedTarget(phase) {
     var p = part();
     if (phase === "load") return TIP + p.lh;
@@ -154,7 +175,7 @@
     var b = document.createElement("button");
     b.type = "button"; b.textContent = p.chip;
     b.setAttribute("aria-label", "Print the " + p.name + " from the " + p.proj + " project");
-    b.addEventListener("click", function () { go(k); kick(); });
+    b.addEventListener("click", function () { bag = bag.filter(function (x) { return x !== k; }); go(k); kick(); });
     ui.pick.appendChild(b);
   });
 
@@ -182,7 +203,7 @@
       if (S.t > 2.4) { S.phase = "remove"; S.t = 0; }
     } else if (S.phase === "remove") {                          // part comes off the plate
       S.alpha = Math.max(0, 1 - S.t / 0.6);
-      if (S.t > 0.7) go(S.i + 1);
+      if (S.t > 0.7) go(nextPart());
     }
     readouts();
   }
@@ -308,7 +329,7 @@
   }
   function kick() { if (!running && visible && !reduceMotion) { running = true; last = performance.now(); requestAnimationFrame(loop); } }
 
-  size(); go(0);
+  S.i = -1; var first = nextPart(); S.i = first; size(); go(first);
   if ("ResizeObserver" in window) new ResizeObserver(size).observe(canvas); else window.addEventListener("resize", size);
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(function (en) { visible = en[0].isIntersecting; if (visible) kick(); }).observe(root);
