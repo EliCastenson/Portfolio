@@ -720,3 +720,31 @@ p strong, dd strong, li p strong, figcaption strong { font-weight: 700; color: v
 
 .proj-text > p { max-width: 30em; margin-bottom: 24px; }
 .proj-media.dark img { object-fit: contain; background: #1c2228; padding: 3% 0; }
+
+/* "The full story": collapsed sections under the projects */
+.story { padding: clamp(40px, 6vw, 72px) 0 0; border-top: 1px solid var(--rule); }
+.story-head { margin-bottom: 24px; }
+.story-head p { margin-top: 10px; }
+.fold { border-top: 1px solid var(--rule); }
+.fold:last-of-type { border-bottom: 1px solid var(--rule); }
+.fold > summary { list-style: none; cursor: pointer; padding: 22px 0; }
+.fold > summary::-webkit-details-marker { display: none; }
+.fold > summary .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "t i" "s i"; gap: 4px 24px; align-items: center; }
+.fold-t { grid-area: t; font-weight: 750; font-size: clamp(20px, 2vw, 26px); line-height: 1.2; }
+.fold-s { grid-area: s; color: var(--ink-2); font-size: 15px; }
+.fold-i { grid-area: i; width: 36px; height: 36px; border: 1px solid var(--rule); border-radius: 50%; position: relative; transition: transform .2s; }
+.fold-i::before, .fold-i::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; margin: -1px 0 0 -6px; background: var(--ink); }
+.fold-i::after { transform: rotate(90deg); transition: transform .2s; }
+.fold[open] .fold-i::after { transform: rotate(0deg); }
+.fold > summary:hover .fold-t { color: var(--teal-ink); }
+.fold > summary:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+.fold > section { padding-top: 8px; border-top: 0; }
+.fold > section > .wrap > .sec-side, .fold > section h2:first-child { scroll-margin-top: 80px; }
+.approach-sec .approach { margin-top: 0; padding-top: 0; border-top: 0; }
+
+/* per-project specs, one click away */
+.proj-more { margin: -8px 0 24px; max-width: 30em; }
+.proj-more > summary { cursor: pointer; font-size: 15px; font-weight: 600; color: var(--teal-ink); width: max-content; }
+.proj-more[open] > summary { margin-bottom: 14px; }
+.proj-more .spec-list { margin-top: 0; }
+.fold > section, .fold > section [id], .fold { scroll-margin-top: 76px; }

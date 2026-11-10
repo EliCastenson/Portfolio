@@ -517,3 +517,27 @@ if (reduceMotion) {
     if (r.ok) links.forEach(function (a) { a.hidden = false; });
   }).catch(function () {});
 })();
+
+/* "The full story" panels: open the right one when a link points inside it,
+   and let canvases inside re-measure once a panel opens. */
+(function () {
+  var folds = document.querySelectorAll("details.fold, details.proj-more");
+  if (!folds.length) return;
+  function openFor(hash) {
+    if (!hash || hash.length < 2) return;
+    var t = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (!t) return;
+    var d = t.closest("details");
+    if (d && !d.open) d.open = true;
+    if (d) setTimeout(function () { t.scrollIntoView({ block: "start" }); }, 30);
+  }
+  folds.forEach(function (d) {
+    d.addEventListener("toggle", function () { if (d.open) window.dispatchEvent(new Event("resize")); });
+  });
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (a) openFor(a.getAttribute("href"));
+  });
+  window.addEventListener("hashchange", function () { openFor(location.hash); });
+  openFor(location.hash);
+})();

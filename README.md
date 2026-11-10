@@ -4,7 +4,7 @@ A static site (plain HTML/CSS, no build step) for GitHub Pages.
 
 ```
 portfolio/
-├── index.html      Home: intro, results, projects, about, contact
+├── index.html      Home: intro, results, projects, "The full story" panels, about, contact
 ├── paddle.html     Pickleball paddle build log
 ├── rc-car.html     RC car build log
 ├── projects.html   All projects on a timeline, oldest first
@@ -46,7 +46,7 @@ replace the text, and delete the span tags around it.
 
 ## Update "Now printing"
 
-The cards in the **What I'm working on now** section of `projects.html` (the timeline page) get their progress from their step lists.
+The cards in the **What I'm working on now** panel on `index.html` (under "The full story") get their progress from their step lists.
 Give each step `class="done"` (finished) or `class="now"` (what you're on), or no class (not started):
 
 ```html
@@ -122,3 +122,10 @@ passes, and add a new `.tl-row` and `.tl-item` for each new project.
 Upload your resume to the top folder of the repo as **`resume.pdf`** (Add file, Upload files). The
 Resume buttons in the header and on the home page stay hidden until that file exists, then show up on
 their own. To update it later, upload a new `resume.pdf` with the same name.
+
+## Home page layout
+
+The top of the home page is the short version: intro, three results, the projects, about, and contact.
+Everything in depth lives in **The full story**, four panels that open on click: what I'm working on now,
+how each project builds up, how I approach a build, and everything I work with. Each project row also has
+a "Specs and progress" toggle. A link to `#now` (or any id inside a panel) opens that panel by itself.
