@@ -4,7 +4,7 @@ A static site (plain HTML/CSS, no build step) for GitHub Pages.
 
 ```
 portfolio/
-├── index.html      Home: intro, project cards, skills, about, contact
+├── index.html      Home: intro, results, projects, about, contact
 ├── paddle.html     Pickleball paddle build log
 ├── rc-car.html     RC car build log
 ├── projects.html   All projects on a timeline, oldest first
@@ -46,7 +46,7 @@ replace the text, and delete the span tags around it.
 
 ## Update "Now printing"
 
-The cards in the **Now printing** section on `index.html` get their progress from their step lists.
+The cards in the **What I'm working on now** section of `projects.html` (the timeline page) get their progress from their step lists.
 Give each step `class="done"` (finished) or `class="now"` (what you're on), or no class (not started):
 
 ```html
@@ -100,7 +100,7 @@ If you open the files straight from your computer, they still animate but the sl
 ## After editing style.css or a .js file
 
 Browsers keep old copies of these files. When you change one, bump the number after `?v=` in the
-`<link>` and `<script>` tags at the top and bottom of each page (e.g. `style.css?v=14` to `style.css?v=15`)
+`<link>` and `<script>` tags at the top and bottom of each page (e.g. `style.css?v=15` to `style.css?v=16`)
 so visitors get the new version.
 
 ## The printer at the top of the home page
@@ -116,3 +116,9 @@ temperature, and color are in the `PARTS` list near the top of the file.
 bar's `--a` and `--b` are months counted from December 2025 (0) to the end of May 2027 (18), and the
 orange "Now" line is `--now` on `.tl-chart` (11.27 = early November 2026). Move `--now` forward as time
 passes, and add a new `.tl-row` and `.tl-item` for each new project.
+
+## Resume
+
+Upload your resume to the top folder of the repo as **`resume.pdf`** (Add file, Upload files). The
+Resume buttons in the header and on the home page stay hidden until that file exists, then show up on
+their own. To update it later, upload a new `resume.pdf` with the same name.

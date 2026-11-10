@@ -508,3 +508,12 @@ if (reduceMotion) {
     }).observe(panel);
   }
 })();
+
+/* Resume: the buttons stay hidden until resume.pdf has been uploaded to the site. */
+(function () {
+  var links = document.querySelectorAll("[data-resume]");
+  if (!links.length || location.protocol === "file:") return;
+  fetch("resume.pdf", { method: "HEAD", cache: "no-store" }).then(function (r) {
+    if (r.ok) links.forEach(function (a) { a.hidden = false; });
+  }).catch(function () {});
+})();

@@ -49,7 +49,7 @@
         circle(c, R, R, R * 0.2);
       },
       edge: function (c, w) { circle(c, w / 2, w / 2, w * 0.3); } },
-    { name: "Cycloidal disk, 7:1", chip: "Cycloidal disk", proj: "AP Research", href: "#now", file: "cycloidal_disk.3mf", mat: "PLA", noz: 220, color: "#4fc4bd", spool: 2, ar: 1,
+    { name: "Cycloidal disk, 7:1", chip: "Cycloidal disk", proj: "AP Research", href: "projects.html#now", file: "cycloidal_disk.3mf", mat: "PLA", noz: 220, color: "#4fc4bd", spool: 2, ar: 1,
       draw: function (c, w) {
         var R = w / 2;
         // true cycloid profile: 8 ring pins, 7 lobes (pin circle 1, pin radius 0.13, eccentricity 0.06)
@@ -84,7 +84,7 @@
       },
       rule: "nonzero",
       holes: function (c, w, h) { var r = h / 2; circle(c, r, r, r * 0.46); circle(c, w - r, r, r * 0.46); } },
-    { name: "Planet gear, 30 teeth", chip: "Planet gear", proj: "AP Research", href: "#now", file: "planet_gear_30t.3mf", mat: "PLA", noz: 220, color: "#4fc4bd", spool: 2, ar: 1,
+    { name: "Planet gear, 30 teeth", chip: "Planet gear", proj: "AP Research", href: "projects.html#now", file: "planet_gear_30t.3mf", mat: "PLA", noz: 220, color: "#4fc4bd", spool: 2, ar: 1,
       draw: function (c, w) {
         var R = w / 2, n = 30;                                   // one of three planets in the 7:1 planetary (sun 12, ring 72)
         polar(c, R, R, 1800, function (a) {
@@ -166,7 +166,7 @@
     spools.forEach(function (s, k) { s.classList.toggle("on", k === p.spool); });
     ui.file.textContent = p.file;
     ui.what.innerHTML = "<strong>" + p.proj + ":</strong> " + p.name + ".";
-    ui.link.href = p.href; ui.link.textContent = p.href === "#now" ? "See the research plan" : "See the build";
+    ui.link.href = p.href; ui.link.textContent = p.href === "projects.html#now" ? "See the research plan" : "See the build";
     Array.prototype.forEach.call(ui.pick.children, function (b, k) { b.setAttribute("aria-pressed", k === S.i ? "true" : "false"); });
     if (reduceMotion) { S.phase = "done"; S.layer = p.layers; S.noz = p.noz; S.bedY = bedTarget("done"); S.nx = 0.9; readouts(); draw(); }
   }
